@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "RoadRage-Regular";
-  src: local("RoadRage-Regular"),
-    url("../../../fonts/RoadRage-Regular.ttf") format("truetype");
-  font-weight: bold;
-}
+//ya lo copie en _form-edit.scss
 
 .form--editCharacter {
   display: flex;
@@ -32,13 +27,11 @@
     }
   }
 }
-.name-error,
-.status-error {
-  color: red;
-  text-transform: uppercase;
-  text-align: center;
-}
+//////////////////////////////////////////////////////
 
+
+
+// ya lo copie a _btn.scss
 .submit-btn {
   background-color: #82491eff;
   border: solid transparent;
@@ -79,3 +72,6 @@
   filter: brightness(1.1);
   color: rgb(49, 63, 110);
 }
+
+
+////////////////////////////////////////////////////////

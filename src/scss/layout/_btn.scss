@@ -1,0 +1,83 @@
+/////     log buttons/section buttons    ////
+.primary-btn {
+  background-color: #940404;
+  border-radius: 16px;
+  border-width: 0 0 3px 2px;
+  color: #95ff00dc;
+  cursor: pointer;
+  font-family: "RoadRage-Regular";
+  font-size: 25px;
+  overflow: visible;
+  letter-spacing: 3px;
+  text-align: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  &:hover {
+    filter: brightness(1);
+    color: rgb(0, 0, 0);
+  }
+}
+
+
+
+/////    edit-button / get-button     ////
+.secondary-btn {
+  background-color: #940404;
+  border-radius: 16px;
+  border-width: 0 0 3px 2px;
+  color: #95ff00d8;
+  cursor: pointer;
+  font-family: "RoadRage-Regular";
+  font-size: 24px;
+  height: 35px;
+  letter-spacing: 3px;
+  margin: 5px 0 0 10px;
+  overflow: visible;
+  text-align: center;
+  width: 60px;
+  &:hover {
+    filter: brightness(1);
+    color: rgb(0, 0, 0);
+  }
+}
+
+
+/////     guardar cambios en Edit/ add Character    ////
+.submit-btn {
+  background-color: #82491eff;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: "RoadRage-Regular";
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  overflow: visible;
+  height: 40px;
+  text-align: center;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  width: 150px;
+}
+.submit-btn::after {
+  background-clip: padding-box;
+  background-color: rgb(177, 118, 73);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.submit-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  color: rgb(49, 63, 110);
+}

@@ -1,11 +1,8 @@
-
-// ya lo copié en _status.scss
-
-.form--editCharacter__status {
+.status {
   gap: 10px;
 }
 
-#dead {
+.dead {
   background: red;
   width: 70px;
   text-align: center;
@@ -16,7 +13,7 @@
   letter-spacing: 2px;
 }
 
-#alive {
+.alive {
   background: green;
   width: 70px;
   text-align: center;
@@ -26,5 +23,3 @@
   font-size: 20px;
   letter-spacing: 2px;
 }
-
-//////////////////////////////////////////////////////////////

@@ -1,0 +1,28 @@
+
+.form--editCharacter {
+  display: flex;
+  flex-direction: column;
+  font-family: "RoadRage-Regular";
+  gap: 2.3rem;
+  margin: 0 2rem;
+  align-items: center;
+  input {
+    padding: 0.6rem;
+    background-color: #c1606055;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__status {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    button {
+      padding: 0.6rem;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+  }
+}

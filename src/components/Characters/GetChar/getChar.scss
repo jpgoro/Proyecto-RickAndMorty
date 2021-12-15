@@ -1,10 +1,13 @@
+// esto esta en globales
 @font-face {
   font-family: "RoadRage-Regular";
   src: local("RoadRage-Regular"),
     url("../../../fonts/RoadRage-Regular.ttf") format("truetype");
   font-weight: bold;
 }
+////////////////////////////////////////
 
+// esto sesta en _section-container.scss
 .get-container {
   display: grid;
   place-content: center;
@@ -12,7 +15,9 @@
   background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
   height: 100vh;
 }
+/////////////////////////////////////////////
 
+// esto esta en _form.scss
 .form-get {
   display: flex;
   flex-direction: column;
@@ -36,7 +41,11 @@
   border: 2.5px solid #52ac77a4;
   border-radius: 5px;
 }
+//////////////////////////////////////
 
+
+
+// esta en _btn.scss como ".secondary-btn"
 .get-btn {
   background-color: #940404;
   border-radius: 16px;
@@ -55,3 +64,4 @@
     color: rgb(0, 0, 0);
   }
 }
+///////////////////////////////////////////

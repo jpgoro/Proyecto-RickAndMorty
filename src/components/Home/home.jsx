@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./home.scss";
+
 import backgroundvideo from "./video/videorickandmorty(corto).mp4"
 
 export default function HomePage() {

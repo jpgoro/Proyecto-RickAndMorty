@@ -1,3 +1,8 @@
+
+// la clase nunca se usa... toma la clase del add.
+//se va a utilizar el _form.scs
+
+/*
 .form--editLocation {
   display: flex;
   flex-direction: column;
@@ -8,7 +13,7 @@
   padding: 60px;
   input[name="name"] {
     padding: 10px 20px;
-  }
+  } 
   &__status {
     width: 100%;
     display: flex;
@@ -20,26 +25,34 @@
     }
   }
 }
+*/
+
+//clase no utilizada
+/*
 .center {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
+
+/*
 .name {
   border: 2px solid #e89242ff;
   border-radius: 5%;
   box-shadow: 0px 5px 5px 1px #7a7979;
   height: 30px;
-}
+}*/
 
+//ya lo copie a _form.scss
 .name-error,
 .status-error {
   color: red;
-  text-transform: uppercase;
 }
 
+
+// esto ya esta copiado en _btn.scss
 .submit-btn {
   background-color: #82491eff;
   border: solid transparent;
@@ -80,3 +93,4 @@
   filter: brightness(1.1);
   color: rgb(49, 63, 110);
 }
+///////////////////////////////////////////////

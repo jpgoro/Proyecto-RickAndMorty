@@ -1,4 +1,4 @@
-
+import './scss/app.scss'
 
 import HomePage from "./components/Home/home"
 import { Routes, Route } from 'react-router-dom'
