@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import GetAll from "../../Characters/getAll/GetAll";
+import GetAll from "../../Characters/GetAll/GetAll";
 import HomePage from "../home";
 import "./rightnav.scss"
 

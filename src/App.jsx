@@ -11,7 +11,6 @@ import { CharProvider } from "./contexts/charContext/charContext"
 import GetAll from "./components/Characters/GetAll/GetAll"
 import Navbar from "./components/Home/navbar/navbar"
 import AddChar from "./components/Characters/AddCharacters/AddChar"
-import GetChar from "./components/Characters/getChar/GetChar"
 import { LocationProvider } from "./contexts/locationContext/locationContext"
 import Characters from "./components/Characters/Characters"
 import Locations from "./components/Locations/Locations"
@@ -19,6 +18,7 @@ import AddLocation from "./components/Locations/AddLocations/AddLocation"
 import GetAllLocations from "./components/Locations/GetAll/GetAllLocations"
 import Register from "./components/Register/Register"
 import Login from "./components/Login/Login"
+import GetChar from './components/Characters/GetChar/GetChar'
 function App() {
 
   return (
