@@ -1,3 +1,29 @@
 //tiene el form del addCharacter que ahora esta en
 //_form.scss
 //y el boton en _btn.scss
+
+.portal{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    .img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.hola{
+    opacity: 0;
+}
+
+.view{
+    opacity: 1;
+}

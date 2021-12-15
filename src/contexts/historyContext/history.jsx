@@ -1,8 +1,7 @@
-import { useEffect, useState, createContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState, createContext, useRef } from "react";
+import { useLocation,useNavigate } from "react-router-dom";
 
 const RouterContext = createContext();
-
 
 const PrevProvider = ({ children }) => {
   const location = useLocation();
@@ -11,11 +10,12 @@ const PrevProvider = ({ children }) => {
     from: location.pathname, 
   });
 
+
+
   useEffect(() => {
-    console.log(location.pathname)
     setRoute((prev)=> ({to: location.pathname, from: prev.to}) );
-    console.log(route)
   }, [location]);
+
 
   return (
     <RouterContext.Provider value={route}>{children}</RouterContext.Provider>

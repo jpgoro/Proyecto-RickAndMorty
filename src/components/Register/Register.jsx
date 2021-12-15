@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import "./Register.scss";
 import RouterContext from "../../contexts/historyContext/history";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 function errorHandle(errors) {
@@ -59,12 +59,13 @@ const portal = {
 
 const Register = () => {
   const initialValue = { username:"", email:"", password:"" };
-  const path = useContext(RouterContext);
+  const realRoute = useContext(RouterContext);
   return (
     <>
-    {path.from == "/Login" ? <motion.div variants={portal} animate="animate"></motion.div> : <></>}
-    <div className="form-user">
-      <motion.div variants={portalForm} exit="exit"> 
+    {realRoute.from == "/Login" ? <motion.div variants={portal} className="portal" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif" ></motion.img></motion.div> : <></>}
+    <div className="form-user bg">
+      <h2>{realRoute.from}</h2>
+      <motion.div initial={realRoute.from == "/Login"  ? {opacity:0} : {opacity:1}} animate={{opacity:1, transition:{delay:1, ease:"easeInOut"}}}> 
       <Formik
         initialValues={initialValue}
         validationSchema={Schema}
