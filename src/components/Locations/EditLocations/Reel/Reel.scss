@@ -1,0 +1,65 @@
+// .form--editCharacter {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 25px;
+//     input[type="text"] {
+//       padding: 10px 20px;
+//     }
+//     &__status {
+//       width: 100%;
+//       display: flex;
+//       justify-content: space-evenly;
+//       align-items: center;
+//       button {
+//         padding: 5px 10px;
+//         cursor: pointer;
+//       }
+//     }
+//   }
+//   .name-error,
+//   .status-error {
+//     color: red;
+//     text-transform: uppercase;
+//   }
+  
+//   .submit-btn {
+//     background-color: #82491eff;
+//     border: solid transparent;
+//     border-radius: 16px;
+//     border-width: 0 0 4px;
+//     color: whitesmoke;
+//     cursor: pointer;
+//     font-family: "RoadRage-Regular";
+//     font-size: 23px;
+//     font-weight: 700;
+//     letter-spacing: 0.8px;
+//     overflow: visible;
+//     height: 40px;
+//     text-align: center;
+//     touch-action: manipulation;
+//     transform: translateZ(0);
+//     transition: filter 0.2s;
+//     user-select: none;
+//     width: 150px;
+//   }
+  
+//   .submit-btn::after {
+//     background-clip: padding-box;
+//     background-color: rgb(177, 118, 73);
+//     border: solid transparent;
+//     border-radius: 16px;
+//     border-width: 0 0 4px;
+//     bottom: -4px;
+//     content: "";
+//     left: 0;
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     z-index: -1;
+//   }
+  
+//   .submit-btn:hover:not(:disabled) {
+//     filter: brightness(1.1);
+//     color: rgb(49, 63, 110);
+//   }
+  

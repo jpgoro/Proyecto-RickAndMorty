@@ -1,0 +1,28 @@
+
+a {
+  text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+// BOTONES ROUTE Y HAMBURGUER
+.log-btn {
+  background-color: #940404;
+  border-radius: 16px;
+  border-width: 0 0 3px 2px;
+  color: #95ff00dc;
+  cursor: pointer;
+  font-family: "RoadRage-Regular";
+  font-size: 25px;
+  overflow: visible;
+  letter-spacing: 3px;
+  text-align: center;
+  justify-content: center;
+  padding: .8rem 1.8rem;
+  &:hover {
+    filter: brightness(1);
+    color: rgb(0, 0, 0);
+  }
+}
+

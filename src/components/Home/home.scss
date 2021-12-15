@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "get_schwifty";
+  src: url(../../fonts/get_schwifty.ttf);
+}
+@font-face {
+  font-family: "RoadRage-Regular";
+  src: url(../../fonts/RoadRage-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.video-container {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}

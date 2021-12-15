@@ -1,0 +1,19 @@
+.links-container {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  z-index: 1;
+  height: 83px;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  .link {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+}

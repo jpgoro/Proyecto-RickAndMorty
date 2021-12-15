@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "RoadRage-Regular";
+  src: local("RoadRage-Regular"),
+    url("../../../fonts/RoadRage-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.get-container {
+  display: grid;
+  place-content: center;
+  padding: 100px;
+  background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
+  height: 100vh;
+}
+
+.form-get {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "RoadRage-Regular";
+  font-size: 2rem;
+  border-radius: 8px;
+  height: 150px;
+  width: 300px;
+  box-shadow: 0px 1px 3px 1px #5460a526;
+  padding: 20px;
+}
+
+.input {
+  text-align: center;
+  margin-bottom: 15px;
+  height: 50px;
+  width: 210px;
+  font-family: "RoadRage-Regular";
+  font-size: 25px;
+  border: 2.5px solid #52ac77a4;
+  border-radius: 5px;
+}
+
+.get-btn {
+  background-color: #940404;
+  border-radius: 16px;
+  border-width: 0 0 3px 2px;
+  color: #95ff00d8;
+  cursor: pointer;
+  font-family: "RoadRage-Regular";
+  font-size: 24px;
+  height: 35px;
+  letter-spacing: 3px;
+  overflow: visible;
+  text-align: center;
+  width: 180px;
+  &:hover {
+    filter: brightness(1);
+    color: rgb(0, 0, 0);
+  }
+}

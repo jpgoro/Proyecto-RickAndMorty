@@ -1,0 +1,84 @@
+.addChar-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.form--addCharacter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "RoadRage-Regular";
+  font-size: 2rem;
+  border-radius: 8px;
+  height: 300px;
+  width: 300px;
+    box-shadow: 0px 1px 3px 1px #5460a526;
+  padding: 20px;
+  input {
+    text-align: center;
+    margin-bottom: 15px;
+    height: 50px;
+    width: 210px;
+    font-family: "RoadRage-Regular";
+    font-size: 25px;
+    border: 2.5px solid #52ac77a4;
+    border-radius: 5px;
+  }
+  &__status {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    button {
+      background-color: #940404;
+      border-radius: 16px;
+      border-width: 0 0 3px 2px;
+      color: #95ff00d8;
+      cursor: pointer;
+      font-family: "RoadRage-Regular";
+      font-size: 24px;
+      height: 35px;
+      letter-spacing: 3px;
+      overflow: visible;
+      text-align: center;
+      width: 180px;
+      &:hover {
+        filter: brightness(1);
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+}
+
+.name {
+  border: 2px solid #e89242ff;
+  border-radius: 5%;
+  box-shadow: 0px 5px 5px 1px #7a7979;
+}
+
+.name-error,
+.status-error {
+  color: rgb(214, 190, 190);
+  text-transform: uppercase;
+}
+
+.submit-btn {
+  background-color: #940404;
+  border-radius: 16px;
+  border-width: 0 0 3px 2px;
+  color: #95ff00d8;
+  cursor: pointer;
+  font-family: "RoadRage-Regular";
+  font-size: 24px;
+  height: 35px;
+  letter-spacing: 3px;
+  margin: 5px 0 0 10px;
+  overflow: visible;
+  text-align: center;
+  width: 180px;
+  &:hover {
+    filter: brightness(1);
+    color: rgb(0, 0, 0);
+  }
+}
