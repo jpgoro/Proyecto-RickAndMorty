@@ -1,76 +1,102 @@
-import React,{useState} from "react";
+import React, { useContext } from "react";
+import RouterContext from "../../contexts/historyContext/history";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { motion } from "framer-motion";
-import { useNavigate,useLocation } from 'react-router-dom';
 
-const Schema = Yup.object().shape({
-    email: Yup.string().required("Email is required").email("Email is invalid"),
-    password: Yup.string()
-      .required("Password is required")
-      .min(6, "Invalid Short Password")
-      .max(40, "Invalid Larger Password")
-  });
-
-
-const portal = {
-    hidden:{
-        opacity:0,
-        scale:0
+function errorHandle(errors) {
+  return {
+    email() {
+      return errors.email && <div className="status-error">{errors.email}</div>;
     },
-    visible:{
-        scale:1,
-        opacity:1
+    password() {
+      return (
+        errors.password && <div className="status-error">{errors.password}</div>
+      );
     },
-    exit:{
-        opacity:0,
-        scale:0
-    }
+  };
 }
 
+const Schema = Yup.object().shape({
+  email: Yup.string().required("Email is required").email("Email is invalid"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(6, "Invalid Short Password")
+    .max(40, "Invalid Larger Password"),
+});
 
+
+const portalForm = {
+  exit:{
+    opacity:0,
+    transition:{
+      duration:1,
+      ease:"easeInOut"
+    }
+  },
+  initial:{
+    opacity:0
+  },
+  animate:{
+    opacity:1,
+    transition:{
+      delay:.6
+    }
+  }
+  
+}
+
+const portal = {
+  animate:{
+    scale:[1,1,0],
+    opacity:[1,1,0],
+    transition:{
+      duration:2,
+      ease: "easeInOut"
+    }
+  }
+} 
 
 
 const Login = () => {
   const initialValue = { username: "", email: "", password: "" };
-  const [portalBool,setPortalBool] = useState(null)
-  /* const navigation = useNavigate()
-  const a = useLocation() */
-
+  const path = useContext(RouterContext);
   return (
     <>
-    {  <motion.div variants={portal} initial="hidden" animate="visible" exit={portal.exit} className="portal"></motion.div> }
-    <div className="form-user bg">
-      <Formik
-        initialValues={initialValue}
-        validationSchema={Schema}
-        onSubmit={(v) => {
-          console.log(v);
-        }}
-      >
-        {({ errors }) => {
-          return (
-            <Form className="form--addCharacter">
-              <Field
-                name="email"
-                className="field"
-                placeholder="type your email..."
-              />
-              {/* {errorHandle(errors).email()} */}
-              <Field
-                name="password"
-                className="field"
-                placeholder="type a password..."
-              />
-              {/* {errorHandle(errors).password()} */}
-              <button className="submit-btn" type="submit">
-                Login
-              </button>
-            </Form>
-          );
-        }}
-      </Formik>
-    </div>
+      {path.from == "/Register" ? <motion.div variants={portal} animate="animate"></motion.div> : <h1>6</h1>}
+      <div className="form-user">
+        <motion.div variants={portalForm} initial="initial" animate="animate" exit="exit">
+        <Formik
+          initialValues={initialValue}
+          validationSchema={Schema}
+          onSubmit={(v) => {
+            console.log(v);
+          }}
+        >
+          {({ errors }) => {
+            return (
+              <Form className="form--addCharacter">
+                <Field
+                  name="email"
+                  className="field"
+                  placeholder="type your email..."
+                />
+                {errorHandle(errors).email()}
+                <Field
+                  name="password"
+                  className="field"
+                  placeholder="type a password..."
+                />
+                {errorHandle(errors).password()}
+                <button className="submit-btn" type="submit">
+                  Login
+                </button>
+              </Form>
+            );
+          }}
+        </Formik>
+        </motion.div>
+      </div>
     </>
   );
 };

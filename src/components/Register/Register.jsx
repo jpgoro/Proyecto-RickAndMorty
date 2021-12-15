@@ -1,7 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import "./Register.scss";
+import RouterContext from "../../contexts/historyContext/history";
+import { motion } from "framer-motion";
+
 
 function errorHandle(errors) {
   return {
@@ -32,10 +35,36 @@ const Schema = Yup.object().shape({
     .max(40, "Password must not exceed 40 characters")
 });
 
+const portalForm = {
+  exit:{
+    opacity:0,
+    transition:{
+      duration:1,
+      ease:"easeInOut"
+    }
+  }
+  
+}
+
+const portal = {
+  animate:{
+    scale:[1,1,0],
+    opacity:[1,1,0],
+    transition:{
+      duration:2,
+      ease: "easeInOut"
+    }
+  }
+} 
+
 const Register = () => {
   const initialValue = { username:"", email:"", password:"" };
+  const path = useContext(RouterContext);
   return (
-    <div className="form-user bg">
+    <>
+    {path.from == "/Login" ? <motion.div variants={portal} animate="animate"></motion.div> : <></>}
+    <div className="form-user">
+      <motion.div variants={portalForm} exit="exit"> 
       <Formik
         initialValues={initialValue}
         validationSchema={Schema}
@@ -69,8 +98,11 @@ const Register = () => {
           );
         }}
       </Formik>
-    </div>
+      </motion.div> 
+      </div>
+    </>
   );
 };
 
 export default Register;
+

@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import "./fonts/get_schwifty.ttf"
 import "./fonts/RoadRage-Regular.ttf"
-
+import { PrevProvider } from "./contexts/historyContext/history";
 import { CharProvider } from "./contexts/charContext/charContext"
 // Components
 import GetAll from "./components/Characters/GetAll/GetAll"
@@ -25,6 +25,7 @@ function App() {
 
     <div className="App">
       <Navbar />
+      <PrevProvider>
       <LocationProvider>
         <CharProvider>
           <Routes>
@@ -44,6 +45,7 @@ function App() {
           </Routes>
         </CharProvider>
       </LocationProvider>
+      </PrevProvider>
     </div>
   )
 }
