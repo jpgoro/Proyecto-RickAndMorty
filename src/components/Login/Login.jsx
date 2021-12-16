@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext,useState, useEffect } from "react";
 import RouterContext from "../../contexts/historyContext/history";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "./Login.scss" 
 function errorHandle(errors) {
   return {
@@ -44,14 +44,13 @@ const portal = {
 
 const Login = () => {
   const initialValue = { username: "", email: "", password: "" };
-  const realRoute = useContext(RouterContext);
-  
+ 
+
   return (
     <>
-      {realRoute.from == "/Register" ? <motion.div className="portal" variants={portal} initial="initial" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif"  ></motion.img></motion.div> : <></> }
+      <motion.div className="portal" variants={portal} initial="initial" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif"  ></motion.img></motion.div> 
       <div className="form-user bg">
-      <h2>{realRoute.from}</h2>
-      <motion.div className="hola" initial={(realRoute.from == "/Register") ? {opacity:0} : {opacity:1}} animate={{opacity:1, transition:{delay:1, ease:"easeInOut"}}} > 
+      <motion.div className="hola" initial={{opacity:0}} animate={{opacity:1, transition:{delay:2, ease:"easeInOut"}}} > 
         <Formik
           initialValues={initialValue}
           validationSchema={Schema}

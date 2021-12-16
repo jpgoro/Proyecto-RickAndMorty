@@ -1,9 +1,9 @@
-import React,{useContext} from "react";
+import React,{useContext, useState, useEffect} from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import "./Register.scss";
 import RouterContext from "../../contexts/historyContext/history";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 function errorHandle(errors) {
@@ -35,16 +35,7 @@ const Schema = Yup.object().shape({
     .max(40, "Password must not exceed 40 characters")
 });
 
-const portalForm = {
-  exit:{
-    opacity:0,
-    transition:{
-      duration:1,
-      ease:"easeInOut"
-    }
-  }
-  
-}
+
 
 const portal = {
   animate:{
@@ -59,13 +50,13 @@ const portal = {
 
 const Register = () => {
   const initialValue = { username:"", email:"", password:"" };
-  const realRoute = useContext(RouterContext);
+ 
+
   return (
     <>
-    {realRoute.from == "/Login" ? <motion.div variants={portal} className="portal" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif" ></motion.img></motion.div> : <></>}
+    <motion.div variants={portal} className="portal" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif" ></motion.img></motion.div> 
     <div className="form-user bg">
-      <h2>{realRoute.from}</h2>
-      <motion.div initial={realRoute.from == "/Login"  ? {opacity:0} : {opacity:1}} animate={{opacity:1, transition:{delay:1, ease:"easeInOut"}}}> 
+      <motion.div initial={{opacity:0}} animate={{opacity:1, transition:{delay:2, ease:"easeInOut"}}}> 
       <Formik
         initialValues={initialValue}
         validationSchema={Schema}
@@ -107,3 +98,10 @@ const Register = () => {
 
 export default Register;
 
+
+/* 
+  Estado en el contexto que si venis de login el estado sea true.
+  Si ahora venis Register el estado sea true.
+  Si venis de cualquier que sea false
+
+*/
