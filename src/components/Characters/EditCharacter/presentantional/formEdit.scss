@@ -1,77 +1,77 @@
 //ya lo copie en _form-edit.scss
 
-.form--editCharacter {
-  display: flex;
-  flex-direction: column;
-  font-family: "RoadRage-Regular";
-  gap: 2.3rem;
-  margin: 0 2rem;
-  align-items: center;
-  input {
-    padding: 0.6rem;
-    background-color: #c1606055;
-    &:focus {
-      outline: none;
-    }
-  }
-  &__status {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    button {
-      padding: 0.6rem;
-      border: none;
-      border-radius: 16px;
-      cursor: pointer;
-    }
-  }
-}
-//////////////////////////////////////////////////////
+// .form--editCharacter {
+//   display: flex;
+//   flex-direction: column;
+//   font-family: "RoadRage-Regular";
+//   gap: 2.3rem;
+//   margin: 0 2rem;
+//   align-items: center;
+//   input {
+//     padding: 0.6rem;
+//     background-color: #c1606055;
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+//   &__status {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     button {
+//       padding: 0.6rem;
+//       border: none;
+//       border-radius: 16px;
+//       cursor: pointer;
+//     }
+//   }
+// }
+// //////////////////////////////////////////////////////
 
 
 
-// ya lo copie a _btn.scss
-.submit-btn {
-  background-color: #82491eff;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  color: whitesmoke;
-  cursor: pointer;
-  font-family: "RoadRage-Regular";
-  font-size: 23px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  overflow: visible;
-  height: 40px;
-  text-align: center;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter 0.2s;
-  user-select: none;
-  width: 150px;
-}
+// // ya lo copie a _btn.scss
+// .submit-btn {
+//   background-color: #82491eff;
+//   border: solid transparent;
+//   border-radius: 16px;
+//   border-width: 0 0 4px;
+//   color: whitesmoke;
+//   cursor: pointer;
+//   font-family: "RoadRage-Regular";
+//   font-size: 23px;
+//   font-weight: 700;
+//   letter-spacing: 0.8px;
+//   overflow: visible;
+//   height: 40px;
+//   text-align: center;
+//   touch-action: manipulation;
+//   transform: translateZ(0);
+//   transition: filter 0.2s;
+//   user-select: none;
+//   width: 150px;
+// }
 
-.submit-btn::after {
-  background-clip: padding-box;
-  background-color: rgb(177, 118, 73);
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
+// .submit-btn::after {
+//   background-clip: padding-box;
+//   background-color: rgb(177, 118, 73);
+//   border: solid transparent;
+//   border-radius: 16px;
+//   border-width: 0 0 4px;
+//   bottom: -4px;
+//   content: "";
+//   left: 0;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   z-index: -1;
+// }
 
-.submit-btn:hover:not(:disabled) {
-  filter: brightness(1.1);
-  color: rgb(49, 63, 110);
-}
+// .submit-btn:hover:not(:disabled) {
+//   filter: brightness(1.1);
+//   color: rgb(49, 63, 110);
+// }
 
 
-////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////

@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import "./getall.scss";
 import Modal from "../EditCharacter/presentantional/Modal";
 import CharProvider from '../../../contexts/charContext/charContext';
 
@@ -33,12 +32,13 @@ const GetAll = () => {
                 <motion.h2 className="card-name">{elem.name}</motion.h2>
               </motion.div>
               <motion.div className="card-back">
+                <motion.img className="card-image-back" src={elem.image} alt="" />
                 <motion.div className="card-description">
                   <motion.h4>Gender: {elem.gender}</motion.h4>
                   <motion.h4>Status: {elem.status}</motion.h4>
                   <motion.h4>Specie: {elem.species}</motion.h4>
                 </motion.div>
-                <motion.button onClick={() => setModal(elem)} className="edit-btn">Edit</motion.button>
+                <motion.button onClick={() => setModal(elem)} className="secondary-btn">Edit</motion.button>
               </motion.div>
             </motion.section>
           );

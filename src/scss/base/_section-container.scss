@@ -1,15 +1,14 @@
 .section-bg {
-  background: url('https://images4.alphacoders.com/992/thumb-1920-992073.jpg');
+  background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
   height: 100%;
-  }
-  
-  .section-container {
-      justify-content: center;
-      width: 70%;
-      margin: 0 auto;
-      padding-top: 6rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-    }
-    
+}
+
+.section-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 6rem;
+  gap: 0.3rem;
+}

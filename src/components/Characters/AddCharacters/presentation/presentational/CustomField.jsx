@@ -1,25 +1,17 @@
-import React from 'react'
-import "./CustomField.scss"
+const CustomField = ({ form, status, setStatus }) => {
 
-
-const CustomField = ({form,cond,setCond}) => {
-    
-
-    const chgStatus = () => {
-        if (cond == "Alive"){
-            setCond("Dead")
-            form.setFieldValue("status","Dead")
-        } else{
-            setCond("Alive")
-            form.setFieldValue("status","Alive")
-        }
-    }   
-
-
+    const handleAlive = () => {
+        setStatus("Alive")
+        form.setFieldValue("status", "Alive")
+    }
+    const handleDead = () => {
+        setStatus("Dead")
+        form.setFieldValue("status", "Dead")
+    }
     return (
-        <div className="form--editCharacter__status">
-            <button id='alive' className={cond == "Alive" ? "alive" : "" }  type="button" onClick={()=> chgStatus()}>Alive</button>
-            <button id='dead' className={cond == "Dead" ? "dead" : "" } type="button" onClick={()=> chgStatus()}>Dead</button>
+        <div className="status">
+            <button id='status' className={status == "Alive" ? "alive" : ""} type="button" onClick={handleAlive}>Alive</button>
+            <button id='status' className={status == "Dead" ? "dead" : ""} type="button" onClick={handleDead}>Dead</button>
         </div>
     )
 }

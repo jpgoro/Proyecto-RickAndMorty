@@ -11,8 +11,8 @@ const Modal = () => {
       <AnimatePresence exitBeforeEnter>
         {charsId && (
             <motion.div  className="backdrop">
-              <motion.div className="card" layoutId={charsId}>
-                <motion.img className="card-img" src={charsData.image}></motion.img>
+              <motion.div className="card-back" layoutId={charsId}>
+                {/* <motion.img className="" src={charsData.image}></motion.img> */}
                 <FormEdit/>
                 <motion.div
                   className="modal--edit__close"

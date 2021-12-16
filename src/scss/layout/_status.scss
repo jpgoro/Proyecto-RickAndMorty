@@ -1,25 +1,22 @@
 .status {
-  gap: 10px;
+  display: flex;
+  gap: .6rem;
+}
+#status {
+  background: rgb(230, 218, 218);
+  width: 70px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 20px;
+  font-family: "RoadRage-Regular";
+  font-size: 20px;
+  letter-spacing: 2px;
 }
 
 .dead {
-  background: red;
-  width: 70px;
-  text-align: center;
-  padding-top: 3px;
-  border-radius: 20px;
-  font-family: "RoadRage-Regular";
-  font-size: 20px;
-  letter-spacing: 2px;
+  background: red !important;
 }
 
 .alive {
-  background: green;
-  width: 70px;
-  text-align: center;
-  padding-top: 3px;
-  border-radius: 20px;
-  font-family: "RoadRage-Regular";
-  font-size: 20px;
-  letter-spacing: 2px;
+  background: green !important;
 }
