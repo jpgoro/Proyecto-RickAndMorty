@@ -8,27 +8,26 @@
 ////////////////////////////////////////
 
 // esto sesta en _section-container.scss
-.get-container {
-  display: grid;
-  place-content: center;
-  padding: 100px;
+.get-container {  
   background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
   height: 100vh;
+  width: 100%;
 }
 /////////////////////////////////////////////
 
 // esto esta en _form.scss
 .form-get {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
   font-family: "RoadRage-Regular";
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 80px;
   font-size: 2rem;
   border-radius: 8px;
-  height: 150px;
-  width: 300px;
   box-shadow: 0px 1px 3px 1px #5460a526;
-  padding: 20px;
+  margin: 0 0 120px 0;
 }
 
 .input {

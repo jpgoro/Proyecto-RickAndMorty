@@ -1,0 +1,15 @@
+.locations-grid{
+    display: grid;
+    max-width: 900px;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    gap: 30px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
+}
+.a{
+    width: 100%;
+    height: auto;
+    background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
+}
