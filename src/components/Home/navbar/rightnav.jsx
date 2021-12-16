@@ -1,8 +1,6 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import GetAll from "../../Characters/getAll/GetAll";
-import HomePage from "../home";
 import "./rightnav.scss"
 
 
@@ -33,7 +31,6 @@ const RightNavbar = ({ open }) => {
         <Ul open={open}>
             <Link className="log-btn" to="/Login">Log in</Link>
             <Link className="log-btn" to="/Register">Sign Up</Link>
-            {/* <button className="log-btn">Hall of Ricks</button> */}
         </Ul>
     )
 }

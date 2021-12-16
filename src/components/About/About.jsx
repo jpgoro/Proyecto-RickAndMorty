@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import "./About.scss"
+import "../../scss/app.scss"
 
 const modal = {
   animate:{
@@ -16,7 +16,7 @@ const modal = {
 const About = ({modalUp,setModalUp}) => {
   return (
     <>
-    <button className="log-btn" onClick={()=>setModalUp(true)}>Summary</button>
+    <button className="primary-btn" onClick={()=>setModalUp(true)}>About</button>
     <AnimatePresence initial={false} exitBeforeEnter>
       { modalUp && <motion.div className="backdrop">
         <motion.div className="about-container" >
