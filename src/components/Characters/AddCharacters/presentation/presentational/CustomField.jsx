@@ -1,5 +1,5 @@
 import React from 'react'
-import "./CustomField.scss"
+import '../../../../../scss/app.scss'
 
 
 const CustomField = ({form,cond,setCond}) => {

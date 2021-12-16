@@ -2,8 +2,8 @@
   gap: 10px;
 }
 
-.dead {
-  background: red;
+#alive {
+  background: green;
   width: 70px;
   text-align: center;
   padding-top: 3px;
@@ -13,8 +13,8 @@
   letter-spacing: 2px;
 }
 
-.alive {
-  background: green;
+#dead {
+  background: red;
   width: 70px;
   text-align: center;
   padding-top: 3px;

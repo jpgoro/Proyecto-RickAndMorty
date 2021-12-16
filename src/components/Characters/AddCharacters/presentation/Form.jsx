@@ -3,7 +3,8 @@ import { Formik, Form, Field } from "formik";
 import { useState, useContext } from "react";
 import CharContext from "../../../../contexts/charContext/charContext";
 import CustomField from "./presentational/CustomField";
-import "./Form.scss"
+
+import '../../../../scss/app.scss'
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -52,13 +53,15 @@ export default function Reel() {
       onSubmit={fnValidationForm}>
       {({ errors }) => {
         return (
-          <Form className="form--addCharacter">
+          <div className="form-container">
+          <Form className="form">
             <Field name="name" className="name" placeholder="type your name..." />
             {errorHandle(errors).name()}
               <Field cond={cond} setCond={setCond} name="status" component={CustomField} />
             {errorHandle(errors).status()}
             <button className="submit-btn" type="submit">Add Character</button>
           </Form>
+          </div>
         )
       }}
     </Formik>

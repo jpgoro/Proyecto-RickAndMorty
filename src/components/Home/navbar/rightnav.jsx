@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import "./rightnav.scss"
+
 
 
 const Ul = styled.ul`
@@ -29,8 +29,8 @@ const Ul = styled.ul`
 const RightNavbar = ({ open }) => {
     return (
         <Ul open={open}>
-            <Link className="log-btn" to="/Login">Log in</Link>
-            <Link className="log-btn" to="/Register">Sign Up</Link>
+            <Link className="primary-btn" to="/Login">Log in</Link>
+            <Link className="primary-btn" to="/Register">Sign Up</Link>
         </Ul>
     )
 }
