@@ -2,8 +2,9 @@ import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { useState, useContext } from "react";
 import CharContext from "../../../../contexts/charContext/charContext";
-import CustomField from "./presentational/CustomField";
-import "./formEdit.scss";
+import CustomField from "../../AddCharacters/presentation/presentational/CustomField";
+
+import '../../../../scss/app.scss';
 
 const TAGS_VALIDATION_FORM = {
   NAME: {

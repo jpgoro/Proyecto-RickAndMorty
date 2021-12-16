@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React,{useContext, useState, useEffect} from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import "./Register.scss";
@@ -35,16 +35,7 @@ const Schema = Yup.object().shape({
     .max(40, "Password must not exceed 40 characters")
 });
 
-const portalForm = {
-  exit:{
-    opacity:0,
-    transition:{
-      duration:1,
-      ease:"easeInOut"
-    }
-  }
-  
-}
+
 
 const portal = {
   animate:{
@@ -59,12 +50,13 @@ const portal = {
 
 const Register = () => {
   const initialValue = { username:"", email:"", password:"" };
-  const path = useContext(RouterContext);
+ 
+
   return (
     <>
-    {path.from == "/Login" ? <motion.div variants={portal} animate="animate"></motion.div> : <></>}
-    <div className="form-user">
-      <motion.div variants={portalForm} exit="exit"> 
+    <motion.div variants={portal} className="portal" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif" ></motion.img></motion.div> 
+    <div className="form-user bg">
+      <motion.div initial={{opacity:0}} animate={{opacity:1, transition:{delay:2, ease:"easeInOut"}}}> 
       <Formik
         initialValues={initialValue}
         validationSchema={Schema}
@@ -106,3 +98,10 @@ const Register = () => {
 
 export default Register;
 
+
+/* 
+  Estado en el contexto que si venis de login el estado sea true.
+  Si ahora venis Register el estado sea true.
+  Si venis de cualquier que sea false
+
+*/

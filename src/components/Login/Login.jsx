@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext,useState, useEffect } from "react";
 import RouterContext from "../../contexts/historyContext/history";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { motion } from "framer-motion";
-
+import "./Login.scss" 
 function errorHandle(errors) {
   return {
     email() {
@@ -26,27 +26,11 @@ const Schema = Yup.object().shape({
 });
 
 
-const portalForm = {
-  exit:{
-    opacity:0,
-    transition:{
-      duration:1,
-      ease:"easeInOut"
-    }
-  },
-  initial:{
-    opacity:0
-  },
-  animate:{
-    opacity:1,
-    transition:{
-      delay:.6
-    }
-  }
-  
-}
-
 const portal = {
+  initial:{
+    opacity:0,
+    scale:0
+  },
   animate:{
     scale:[1,1,0],
     opacity:[1,1,0],
@@ -60,12 +44,13 @@ const portal = {
 
 const Login = () => {
   const initialValue = { username: "", email: "", password: "" };
-  const path = useContext(RouterContext);
+ 
+
   return (
     <>
-      {path.from == "/Register" ? <motion.div variants={portal} animate="animate"></motion.div> : <h1>6</h1>}
-      <div className="form-user">
-        <motion.div variants={portalForm} initial="initial" animate="animate" exit="exit">
+      <motion.div className="portal" variants={portal} initial="initial" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif"  ></motion.img></motion.div> 
+      <div className="form-user bg">
+      <motion.div className="hola" initial={{opacity:0}} animate={{opacity:1, transition:{delay:2, ease:"easeInOut"}}} > 
         <Formik
           initialValues={initialValue}
           validationSchema={Schema}
@@ -75,6 +60,7 @@ const Login = () => {
         >
           {({ errors }) => {
             return (
+              
               <Form className="form--addCharacter">
                 <Field
                   name="email"

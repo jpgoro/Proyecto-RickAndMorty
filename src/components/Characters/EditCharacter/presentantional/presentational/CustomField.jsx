@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React from 'react'
+=======
+/*import React from 'react'
+import "./CustomField.scss"
+>>>>>>> 5f2ba838e66fe8a4b376a8f4046a9e9aafa9b237
 
 
 const CustomField = ({form,cond,setCond}) => {
@@ -22,4 +27,4 @@ const CustomField = ({form,cond,setCond}) => {
     )
 }
 
-export default CustomField
+export default CustomField*/

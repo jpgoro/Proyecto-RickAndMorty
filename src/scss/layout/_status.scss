@@ -13,10 +13,33 @@
   letter-spacing: 2px;
 }
 
+<<<<<<< HEAD
 .dead {
   background: red !important;
 }
 
 .alive {
   background: green !important;
+=======
+#alive {
+  background: green;
+  width: 70px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 20px;
+  font-family: "RoadRage-Regular";
+  font-size: 20px;
+  letter-spacing: 2px;
+>>>>>>> 5f2ba838e66fe8a4b376a8f4046a9e9aafa9b237
+}
+
+#dead {
+  background: red;
+  width: 70px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 20px;
+  font-family: "RoadRage-Regular";
+  font-size: 20px;
+  letter-spacing: 2px;
 }

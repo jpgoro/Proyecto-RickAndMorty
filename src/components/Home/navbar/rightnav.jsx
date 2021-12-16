@@ -1,9 +1,7 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import GetAll from "../../Characters/getAll/GetAll";
-import HomePage from "../home";
-import "./rightnav.scss"
+
 
 
 const Ul = styled.ul`
@@ -31,9 +29,8 @@ const Ul = styled.ul`
 const RightNavbar = ({ open }) => {
     return (
         <Ul open={open}>
-            <Link className="log-btn" to="/Login">Log in</Link>
-            <Link className="log-btn" to="/Register">Sign Up</Link>
-            {/* <button className="log-btn">Hall of Ricks</button> */}
+            <Link className="primary-btn" to="/Login">Log in</Link>
+            <Link className="primary-btn" to="/Register">Sign Up</Link>
         </Ul>
     )
 }
