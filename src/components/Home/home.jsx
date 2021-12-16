@@ -8,7 +8,7 @@ export default function HomePage() {
   const [modalInfo,setModalInfo] = useState(null)
   
   return (
-    <div className="img-back">
+    <div className="home-img-back">
     <div className="home-container">
       {<video autoPlay loop muted className="video-container" >
         <source src={backgroundvideo} type="video/mp4" />
