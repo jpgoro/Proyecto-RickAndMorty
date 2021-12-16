@@ -3,11 +3,6 @@ import { Formik, Form, Field } from "formik";
 import { useState, useContext } from "react";
 import CharContext from "../../../../contexts/charContext/charContext";
 import CustomField from "./presentational/CustomField";
-<<<<<<< HEAD
-=======
-
-import '../../../../scss/app.scss'
->>>>>>> 5f2ba838e66fe8a4b376a8f4046a9e9aafa9b237
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -55,8 +50,8 @@ export default function Reel() {
   let initialValue = { name: "", gender: "", species: "", status: "", image: "" }
   const [status, setStatus] = useState("")
   const handleRefresh = () => {
-      alert("Character created")
-      setStatus("")
+    alert("Character created")
+    setStatus("")
   }
   const fnValidationForm = (v) => {
     setChars(
@@ -70,14 +65,8 @@ export default function Reel() {
       onSubmit={fnValidationForm}>
       {({ errors }) => {
         return (
-<<<<<<< HEAD
           <Form className="form-container" >
             <Field name="name" placeholder="Enter a name..." />
-=======
-          <div className="form-container">
-          <Form className="form">
-            <Field name="name" className="name" placeholder="type your name..." />
->>>>>>> 5f2ba838e66fe8a4b376a8f4046a9e9aafa9b237
             {errorHandle(errors).name()}
             <Field name="gender" placeholder="Enter a gender..." />
             {errorHandle(errors).gender()}
@@ -85,11 +74,10 @@ export default function Reel() {
             {errorHandle(errors).species()}
             <Field status={status} setStatus={setStatus} name="status" component={CustomField} />
             {errorHandle(errors).status()}
-            <button className="submit-btn" type="submit" onClick={ handleRefresh }>Add Character</button>
+            <button className="submit-btn" type="submit" onClick={handleRefresh}>Add Character</button>
           </Form>
-          </div>
         )
       }}
-    </Formik>
+    </Formik >
   )
 } 

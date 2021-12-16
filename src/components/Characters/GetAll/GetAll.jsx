@@ -6,10 +6,8 @@ import CharProvider from '../../../contexts/charContext/charContext';
 
 const GetAll = () => {
   const { chars, setCharsId, setCharsData } = useContext(CharProvider)
-  // const [flipped, setflipped] = useState(false);
   const handleFlip = (i) => {
     chars[i].classList.toggle("flipped");
-    // setflipped(!flipped)
   }
   const setModal = (elem) => {
     setCharsData(elem);
