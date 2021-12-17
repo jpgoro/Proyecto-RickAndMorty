@@ -1,21 +1,32 @@
 import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import CharProvider from '../../../contexts/locationContext/locationContext';
+import LocationProvider from '../../../contexts/locationContext/locationContext';
 import EditLocations from "../EditLocations/EditLocations";
 
-
 const GetAllLocations = () => {
-  const { locations, setLocationId, setLocationData } = useContext(CharProvider)
-
+  const { locations, setLocationId, setLocationData } = useContext(LocationProvider)
   const setModal = (elem) => {
     setLocationData(elem);
     setLocationId(elem.id);
   };
+  const locs = locations;
+  const [location, setLocation] = useState(locs);
 
+  const filter = (e) => {
+    if (e.target.value === "") return setLocation(locations) 
+    let founded = location.filter(elem => elem.name.includes(e.target.value))
+    setLocation(founded)
+  }
   return (
     <div className="bg">
+      <input
+        className="input"
+        type="text"
+        placeholder="Search for locations..."
+        onKeyUp={(e) => filter(e)}
+      />
       <article className="card-container">
-        {locations.map((elem, i) => {
+        {location.map((elem, i) => {
           return (
             <motion.section
               layoutId={elem.id}

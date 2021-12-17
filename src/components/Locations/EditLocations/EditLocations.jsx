@@ -8,7 +8,6 @@ import "./EditLocations.scss"
 
 const EditLocations = () => {
     const {locationData,setLocationData,locationId,setLocationId} = useContext(LocationContext) /* setKicatuibs ki vit a ysar en el form */
-    console.log(locationData)
     return (
         <AnimatePresence exitBeforeEnter>
         {locationId && (

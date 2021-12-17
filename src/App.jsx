@@ -19,7 +19,7 @@ import AddLocation from "./components/Locations/AddLocations/AddLocation";
 import GetAllLocations from "./components/Locations/GetAll/GetAllLocations";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
-import SearchLocations from "./components/Locations/GetLocation/GetLocation";
+import SearchLocations from "./components/Locations/GetLocation/SearchLocations";
 function App() {
   return (
     <div className="App">
@@ -37,7 +37,7 @@ function App() {
               <Route path="/Locations" element={<Locations />}>
                 <Route path="getAllLocations" element={<GetAllLocations />} />
                 <Route path="addLocation" element={<AddLocation />} />
-                <Route path="getLocation" element={<SearchLocations/>} />
+                {/* <Route path="getLocation" element={<SearchLocations/>} /> */}
               </Route>
               <Route path="/Register" element={<Register />} />
               <Route path="/Login" element={<Login />} />
