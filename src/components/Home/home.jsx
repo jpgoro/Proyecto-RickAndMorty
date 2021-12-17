@@ -3,6 +3,7 @@ import { useState } from "react";
 import backgroundvideo from "./video/videorickandmorty(corto).mp4"
 import About from "../About/About";
 import "../../scss/app.scss"
+import "../../scss/base/_globales.scss"
 
 export default function HomePage() {
   const [modalInfo,setModalInfo] = useState(null)

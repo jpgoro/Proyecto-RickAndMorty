@@ -25,26 +25,26 @@
   background-color: #940404;
   border-radius: 16px;
   border-width: 0 0 3px 2px;
-  color: #95ff00d8;
-  cursor: pointer;
+  color: #fff;
   font-family: "RoadRage-Regular";
   font-size: 24px;
   height: 35px;
   letter-spacing: 3px;
-  margin: 5px 0 0 10px;
-  overflow: visible;
-  text-align: center;
+  // margin: 5px 0 0 10px;
+  // overflow: visible;
+  // text-align: center;
   width: 60px;
   &:hover {
     filter: brightness(1);
-    color: rgb(0, 0, 0);
+    color: #94ff00;
+    cursor: pointer;
   }
 }
 
 
 /////     guardar cambios en Edit/ add Character    ////
 .submit-btn {
-  background-color: rgb(212, 27, 27);
+  background-color: #432e1e;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -65,7 +65,7 @@
 }
 .submit-btn::after {
   background-clip: padding-box;
-  background-color: rgb(218, 31, 31);
+  background-color: #5b3e28;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -79,6 +79,6 @@
 }
 .submit-btn:hover:not(:disabled) {
   filter: brightness(1.1);
-  color: rgb(49, 63, 110);
+  color: #74c20d;
 }
 

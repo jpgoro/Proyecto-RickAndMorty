@@ -39,9 +39,17 @@ h2 {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 10;
 }
-
+input {
+  text-align: center;
+  height: 50px;
+  width: 210px;
+  font-family: "RoadRage-Regular";
+  font-size: 25px;
+  border: 2.5px solid #52ac77a4;
+  border-radius: 5px;
+}
 .video-container {
   width: 100%;
   object-fit: cover;

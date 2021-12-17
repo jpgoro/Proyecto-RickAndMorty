@@ -2,7 +2,7 @@ import Form from "./presentation/Form"
 
 const AddChar = () => {
     return (
-        <article className="section-container bg">
+        <article className="bg">
             <Form/>
         </article>
     )

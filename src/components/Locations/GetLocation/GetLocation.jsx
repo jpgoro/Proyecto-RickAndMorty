@@ -1,46 +1,50 @@
-import axios from "axios";
 import { useState } from "react";
 import { useContext } from "react";
 import LocationContext from "../../../contexts/locationContext/locationContext";
 import "./GetLocations.scss"
 
 const SearchLocations = () => {
-  const [char, setChar] = useState([]);
-  const {locations} = useContext(LocationContext)
+  const [location, setLocation] = useState([]);
+  const { locations } = useContext(LocationContext)
 
 
-  const filter = (e)=>{
-    if (e.target.value == "") return setChar([])  
-    let founded = locations.filter(el=> el.name.includes(e.target.value))
-    setChar(founded)
+  const filter = (e) => {
+    if (e.target.value == "") return setLocation([])
+    let founded = locations.filter(el => el.name.includes(e.target.value))
+    setLocation(founded)
   }
 
   return (
-    <div className="get-container">
-      <div className="form-get">
+    <div className="bg">
+      <div className="form-container">
         <input
           className="input"
           type="text"
           placeholder="Search for locations..."
-          onKeyUp={(e)=>filter(e)}
+          onKeyUp={(e) => filter(e)}
         />
-      </div>
-    <div className="a">
-    <section className="locations-grid">
-      { char.length != 0 && char.map((el,i)=>{
-        return( 
-          <section className="card" key={i}>
-          <img className="card-img" src={el.image} alt="" />
-          <h2 className="card-name">{el.name}</h2>
-          <div className="card-char">
-            <h4>Gender: {el.type}</h4>
-            <h4>Status: {el.dimension}</h4>
-          </div>
-        </section>
-        )
-      })
-      }
-      </section>
+        <div className="filter-container">
+          <section className="card-container">
+            {location.map((elem, i) => {
+              return (
+                <section className="card-button" key={i}>
+                  <div className="card-front">
+                    <img className="card-image" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg" alt="" />
+                    <h2 className="card-name">{elem.name}</h2>
+                  </div>
+                  <div className="card-back">
+                    <img className="card-image-back" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg" alt="" />
+                    <div className="card-description">
+                      <h4>Type: {elem.type}</h4>
+                      <h4>Dimension: {elem.dimension}</h4>
+                    </div>
+                  </div>
+                </section>
+              )
+            })
+            }
+          </section>
+        </div>
       </div>
     </div>
   );

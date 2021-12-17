@@ -1,6 +1,6 @@
 .status {
   display: flex;
-  gap: .6rem;
+  gap: 0.6rem;
 }
 #status {
   background: rgb(230, 218, 218);
@@ -11,11 +11,11 @@
   font-family: "RoadRage-Regular";
   font-size: 20px;
   letter-spacing: 2px;
+  border: none;
 }
 .dead {
   background: red !important;
 }
-
 .alive {
   background: green !important;
 }

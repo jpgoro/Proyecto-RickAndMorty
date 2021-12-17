@@ -22,7 +22,7 @@ const GetAll = () => {
             <motion.section
               layoutId={elem.id}
               key={i}
-              className={`card-button`}
+              className="card-button"
               onClick={(e) => e.currentTarget.classList.toggle("flipped")}
             >
               <motion.div className="card-front">

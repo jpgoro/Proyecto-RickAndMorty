@@ -20,14 +20,14 @@ function errorHandle(errors) {
   return {
 
     name() {
-      return errors.name && (<div className="name-error">{errors.name}</div>)
+      return errors.name && (<div className="description-error">{errors.name}</div>)
     },
 
     type() {
-      return errors.type && (<div className="status-error">{errors.type}</div>)
+      return errors.type && (<div className="description-error">{errors.type}</div>)
     },
     dimention() {
-      return errors.dimention && (<div className="status-error">{errors.dimention}</div>)
+      return errors.dimention && (<div className="description-error">{errors.dimention}</div>)
     }
 
   }
@@ -57,7 +57,7 @@ export default function Reel() {
       onSubmit={fnValidationForm}>
       {({ errors }) => {
         return (
-          <Form className="form--addCharacter">
+          <Form className="form-container">
             <Field name="name" className="name" placeholder="name" />
             {errorHandle(errors).name()}
             <Field name="type" className="name" placeholder="type" />

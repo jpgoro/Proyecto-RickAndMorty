@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: .8rem;
+  padding-top: 10rem;
+  height: 100vh;
 }
 
 .form {
@@ -20,17 +22,11 @@
   padding: 20px;
 }
 
-input {
-  text-align: center;
-  height: 50px;
-  width: 210px;
-  font-family: "RoadRage-Regular";
-  font-size: 25px;
-  border: 2.5px solid #52ac77a4;
-  border-radius: 5px;
-}
 
-.name-error,
+
+.description-error,
 .status-error {
-  color: red;
+  color: #e90e0e;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
 }

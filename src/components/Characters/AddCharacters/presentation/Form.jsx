@@ -22,16 +22,16 @@ const TAGS_VALIDATION_FORM = {
 function errorHandle(errors) {
   return {
     name() {
-      return errors.name && (<div className="name-error">{errors.name}</div>)
+      return errors.name && (<div className="description-error">{errors.name}</div>)
     },
     gender() {
-      return errors.gender && (<div className="gender-error">{errors.gender}</div>)
+      return errors.gender && (<div className="description-error">{errors.gender}</div>)
     },
     species() {
-      return errors.species && (<div className="specie-error">{errors.specie}</div>)
+      return errors.species && (<div className="description-error">{errors.species}</div>)
     },
     status() {
-      return errors.status && (<div className="status-error">{errors.status}</div>)
+      return errors.status && (<div className="description-error">{errors.status}</div>)
     }
   }
 }
@@ -50,8 +50,8 @@ export default function Reel() {
   let initialValue = { name: "", gender: "", species: "", status: "", image: "" }
   const [status, setStatus] = useState("")
   const handleRefresh = () => {
-    alert("Character created")
-    setStatus("")
+      alert("Character created")
+      setStatus("")
   }
   const fnValidationForm = (v) => {
     setChars(
@@ -74,10 +74,10 @@ export default function Reel() {
             {errorHandle(errors).species()}
             <Field status={status} setStatus={setStatus} name="status" component={CustomField} />
             {errorHandle(errors).status()}
-            <button className="submit-btn" type="submit" onClick={handleRefresh}>Add Character</button>
+            <button className="submit-btn" type="submit" onClick={ handleRefresh }>Add Character</button>
           </Form>
         )
       }}
-    </Formik >
+    </Formik>
   )
 } 
