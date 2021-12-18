@@ -10,7 +10,7 @@ const GetAllLocations = () => {
     setLocationData(elem);
     setLocationId(elem.id);
   };
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState(locations);
 
   const filter = (e) => {
     if (e.target.value == "") return setLocation(locations)
