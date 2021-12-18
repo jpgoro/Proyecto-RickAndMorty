@@ -24,7 +24,7 @@ const GetAllLocations = () => {
         <input
           className="input"
           type="text"
-          placeholder="Search for locations..."
+          placeholder="Filter locations..."
           onKeyUp={(e) => filter(e)}
         />
         <div className="filter-container">
