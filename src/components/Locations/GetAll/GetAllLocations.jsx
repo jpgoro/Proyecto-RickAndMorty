@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-import { motion } from "framer-motion";
 import LocationProvider from '../../../contexts/locationContext/locationContext';
 import EditLocations from "../EditLocations/EditLocations";
 
@@ -14,9 +13,7 @@ const GetAllLocations = () => {
 
   const filter = (e) => {
     if (e.target.value == "") return setLocation(locations)
-    console.log(e)
-    console.log(e.target.value)
-    let founded = locations.filter(elem => elem.name.includes(e.target.value))
+    let founded = locations.filter(elem => elem.name.toLowerCase().includes(e.target.value.toLowerCase()))
     setLocation(founded)
   }
   
@@ -34,25 +31,25 @@ const GetAllLocations = () => {
           <article className="card-container">
             {location.map((elem, i) => {
               return (
-                <motion.section
+                <section
                   layoutId={elem.id}
                   key={i}
                   className="card-button"
                   onClick={(e) => e.currentTarget.classList.toggle("flipped")}
                 >
-                  <motion.div className="card-front">
-                    <motion.img className="card-image" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg" alt="" />
-                    <motion.h2 className="card-name">{elem.name}</motion.h2>
-                  </motion.div>
-                  <motion.div className="card-back">
-                    <motion.img className="card-image-back" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg" alt="" />
-                    <motion.div className="card-description">
-                      <motion.h4>Type: {elem.type}</motion.h4>
-                      <motion.h4>Dimension: {elem.dimension}</motion.h4>
-                    </motion.div>
-                    <motion.button onClick={() => setModal(elem)} className="secondary-btn">Edit</motion.button>
-                  </motion.div>
-                </motion.section>
+                  <div className="card-front">
+                    <img className="card-image" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg" alt="" />
+                    <h2 className="card-name">{elem.name}</h2>
+                  </div>
+                  <div className="card-back">
+                    <img className="card-image-back" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg" alt="" />
+                    <div className="card-description">
+                      <h4>Type: {elem.type}</h4>
+                      <h4>Dimension: {elem.dimension}</h4>
+                    </div>
+                    <button onClick={() => setModal(elem)} className="secondary-btn">Edit</button>
+                  </div>
+                </section>
               );
             })}
             <EditLocations />
