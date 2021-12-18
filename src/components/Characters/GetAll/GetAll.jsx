@@ -32,7 +32,6 @@ const GetAll = () => {
             {characters.map((elem, i) => {
               return (
                 <section
-                  layoutId={elem.id}
                   key={i}
                   className="card-button"
                   onClick={(e) => e.currentTarget.classList.toggle("flipped")}

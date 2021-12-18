@@ -6,13 +6,13 @@ import "./Form.scss"
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
-    IS_REQUIRED: "El nombre es obligatorio"
+    IS_REQUIRED: "Enter a valid name!"
   },
   TYPE: {
-    IS_REQUIRED: "El tipo es obligatorio"
+    IS_REQUIRED: "Enter a valid type!"
   },
-  DIMENTION: {
-    IS_REQUIRED: "La dimension es obligatoria"
+  DIMENSION: {
+    IS_REQUIRED: "Enter a valid dimension!"
   }
 };
 
@@ -22,32 +22,31 @@ function errorHandle(errors) {
     name() {
       return errors.name && (<div className="description-error">{errors.name}</div>)
     },
-
     type() {
       return errors.type && (<div className="description-error">{errors.type}</div>)
     },
-    dimention() {
-      return errors.dimention && (<div className="description-error">{errors.dimention}</div>)
+    dimension() {
+      return errors.dimension && (<div className="description-error">{errors.dimension}</div>)
     }
-
   }
 }
 
 const Schema = Yup.object().shape({
   name: Yup.string().required(TAGS_VALIDATION_FORM.NAME.IS_REQUIRED),
   type: Yup.string().required(TAGS_VALIDATION_FORM.TYPE.IS_REQUIRED),
-  dimention: Yup.string().required(TAGS_VALIDATION_FORM.DIMENTION.IS_REQUIRED)
+  dimension: Yup.string().required(TAGS_VALIDATION_FORM.DIMENSION.IS_REQUIRED)
 });
 
 //Espero las props
 
 export default function Reel() {
-  let initialValue = { name: "", type: "", dimention: "" }
+  let initialValue = { name: "", type: "", dimension: "" }
   const { locations, setLocations } = useContext(LocationContext)
   const fnValidationForm = (v) => {
     setLocations(
       [...locations, { ...v, id: locations.length + 1 }]
     )
+    alert("Character created")
   }
 
   return (
@@ -62,9 +61,9 @@ export default function Reel() {
             {errorHandle(errors).name()}
             <Field name="type" className="name" placeholder="type" />
             {errorHandle(errors).type()}
-            <Field name="dimention" className="name" placeholder="dimention" />
-            {errorHandle(errors).dimention()}
-            <button className="submit-btn" type="submit">Add Location</button>
+            <Field name="dimension" className="name" placeholder="dimension" />
+            {errorHandle(errors).dimension()}
+            <button className="submit-btn" type="submit" >Add Location</button>
           </Form>
         )
       }}

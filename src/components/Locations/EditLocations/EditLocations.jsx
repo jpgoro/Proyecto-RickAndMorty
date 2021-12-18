@@ -4,7 +4,6 @@ import { FaWindowClose } from "react-icons/fa";
 import LocationContext from '../../../contexts/locationContext/locationContext';
 import { motion } from 'framer-motion'
 import Reel from './Reel/Reel';
-import "./EditLocations.scss"
 
 const EditLocations = () => {
     const {locationData,setLocationData,locationId,setLocationId} = useContext(LocationContext) /* setKicatuibs ki vit a ysar en el form */

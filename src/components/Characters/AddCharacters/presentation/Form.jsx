@@ -47,22 +47,20 @@ const Schema = Yup.object().shape({
 
 export default function Reel() {
   const { chars, setChars } = useContext(CharContext)
-  let initialValue = { name: "", gender: "", species: "", status: "", image: "https://static.wikia.nocookie.net/rickandmorty/images/a/a1/WeirdRickNew.png/revision/latest/top-crop/width/360/height/360?cb=20210911150926" }
-  const [status, setStatus] = useState("")
-  const handleRefresh = () => {
-    alert("Character created")
-    setStatus("")
-  }
+  let initialValue = { name: "", gender: "", species: "", status: "", image: "https://rickandmortyapi.com/api/character/avatar/19.jpeg" }
+  const [status, setStatus] = useState()
   const fnValidationForm = (v) => {
     setChars(
       [...chars, { ...v, id: chars.length + 1 }]
     )
+    alert("Character created")
   }
   return (
     <Formik
       initialValues={initialValue}
       validationSchema={Schema}
-      onSubmit={fnValidationForm}>
+      onSubmit={fnValidationForm}
+    >
       {({ errors }) => {
         return (
           <Form className="form-container" >
@@ -74,7 +72,7 @@ export default function Reel() {
             {errorHandle(errors).species()}
             <Field status={status} setStatus={setStatus} name="status" component={CustomField} />
             {errorHandle(errors).status()}
-            <button className="submit-btn" type="submit" onClick={handleRefresh}>Add Character</button>
+            <button className="submit-btn" type="submit" >Add Character</button>
           </Form>
         )
       }}

@@ -10,13 +10,13 @@
 }
 .card-container {
   justify-content: center;
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
   padding-top: 1.6rem;
   padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 2.3rem;
+  gap: 1rem;
 }
 .bg {
   background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
@@ -52,6 +52,7 @@
   color: #94ff00;
   font-size: 2rem;
   text-align: center;
+  height: 65%;
   h4 {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
