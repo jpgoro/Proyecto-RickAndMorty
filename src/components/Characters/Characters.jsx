@@ -12,9 +12,6 @@ const Characters = () => {
                 <li>
                     <Link className="primary-btn" to="/Characters/addChar">Add Character</Link>
                 </li>
-                <li>
-                    <Link className="primary-btn" to="/Characters/getChar">Get Character</Link>
-                </li>
             </ul>
             <Outlet />
         </div>

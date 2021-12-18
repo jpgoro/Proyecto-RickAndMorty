@@ -27,8 +27,8 @@ const GetAllLocations = () => {
         <input
           className="input"
           type="text"
-          placeholder="Search for locations..."
-          onKeyUpCapture={(e) => filter(e)}
+          placeholder="Filter locations..."
+          onKeyUp={(e) => filter(e)}
         />
         <div className="filter-container">
           <article className="card-container">
