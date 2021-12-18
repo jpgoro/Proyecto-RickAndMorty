@@ -12,9 +12,6 @@ const Locations = () => {
                 <li>
                     <Link className="primary-btn" to="/Locations/addLocation">Add Location</Link>
                 </li>
-                <li>
-                    <Link className="primary-btn" to="/Locations/getLocation">Get Location</Link>
-                </li>
             </ul>
             <Outlet />
         </div>

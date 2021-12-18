@@ -9,6 +9,7 @@ export default function Navbar() {
             <Link to="/">
                 <div className="logo" />
             </Link>
+            
             <Burger />
         </nav>
 

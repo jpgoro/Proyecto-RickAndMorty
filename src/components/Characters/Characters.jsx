@@ -4,7 +4,7 @@ import '../../scss/app.scss'
 
 const Characters = () => {
     return (
-        <div className="sidebar-container">
+        <div>
             <ul className="links-container">
                 <li>
                     <Link className="primary-btn" to="/Characters/getAllChars">Characters</Link>

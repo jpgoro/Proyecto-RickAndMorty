@@ -4,9 +4,10 @@
 }
 .section-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 70%;
   margin: 0 auto;
   padding-top: 6rem;
   gap: 0.3rem;
@@ -14,8 +15,8 @@
 
 .links-container {
   position: absolute;
-  top: 0;
   left: 30%;
+  top: 0;
   z-index: 1;
   height: 83px;
   display: flex;
@@ -31,6 +32,9 @@
     margin-top: 15px;
   }
 }
+
 .filter-container{
   background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
+  width: 100%;
+  height: auto;
 }
