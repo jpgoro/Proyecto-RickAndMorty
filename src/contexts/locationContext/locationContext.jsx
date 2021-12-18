@@ -8,7 +8,7 @@ const LocationProvider = ({ children }) => {
     const [locations, setLocations] = useState([]);
     const [locationId, setLocationId] = useState(null);
     const [locationData, setLocationData] = useState({});
-
+    //Pongo estado de filtro
     useEffect(() => {
         axios.get(url)
             .then(res => {

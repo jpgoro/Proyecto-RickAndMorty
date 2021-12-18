@@ -37,7 +37,7 @@ function App() {
               <Route path="/Locations" element={<Locations />}>
                 <Route path="getAllLocations" element={<GetAllLocations />} />
                 <Route path="addLocation" element={<AddLocation />} />
-                {/* <Route path="getLocation" element={<SearchLocations/>} /> */}
+                <Route path="getLocation" element={<SearchLocations/>} />
               </Route>
               <Route path="/Register" element={<Register />} />
               <Route path="/Login" element={<Login />} />
