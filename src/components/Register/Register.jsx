@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 function errorHandle(errors) {
   return {
     username() {
-      return errors.username && <div className="name-error">{errors.username}</div>;
+      return errors.username && <div className="status-error">{errors.username}</div>;
     },
 
     email() {

@@ -20,7 +20,7 @@ const TAGS_VALIDATION_FORM = {
     return {
 
         name(){
-            return errors.name && (<div className="name-error">{errors.name}</div>)
+            return errors.name && (<div className="status-error">{errors.name}</div>)
         },
 
         type(){

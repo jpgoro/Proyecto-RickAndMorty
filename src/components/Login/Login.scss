@@ -27,3 +27,12 @@
 .view{
     opacity: 1;
 }
+
+.form--addCharacter{
+    display: flex;
+  flex-direction: column;
+  font-family: "RoadRage-Regular";
+  gap: 1rem;
+  margin: 0 2rem;
+  align-items: center;
+}

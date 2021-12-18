@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import LocationContext from "../../../contexts/locationContext/locationContext";
 
 const SearchLocations = () => {
-  const [location, setLocation] = useState([]);
   const { locations } = useContext(LocationContext)
-
+  const [location, setLocation] = useState(locations);
+  console.log(location)
   const filter = (e) => {
-    if (e.target.value == "") return setLocation([])
-    let founded = location.filter(el => el.name.includes(e.target.value))
+    /* if (e.target.value == "") return setLocation([]) */
+    let founded = locations.filter(el => el.name.includes(e.target.value))
     setLocation(founded)
   }
 
@@ -21,7 +20,7 @@ const SearchLocations = () => {
           placeholder="Search for locations..."
           onKeyUp={(e) => filter(e)}
         />
-        {/* <div className="filter-container">
+        <div className="filter-container">
           <section className="card-container">
             {location.map((elem, i) => {
               return (
@@ -42,7 +41,7 @@ const SearchLocations = () => {
             })
             }
           </section>
-        </div> */}
+        </div>
       </div>
     </div>
   );
