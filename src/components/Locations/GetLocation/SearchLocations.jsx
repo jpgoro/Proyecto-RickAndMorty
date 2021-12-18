@@ -6,7 +6,7 @@ const SearchLocations = () => {
   const [location, setLocation] = useState(locations);
   console.log(location)
   const filter = (e) => {
-    /* if (e.target.value == "") return setLocation([]) */
+    if (e.target.value == "") return setLocation([])
     let founded = locations.filter(el => el.name.includes(e.target.value))
     setLocation(founded)
   }

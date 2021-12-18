@@ -10,14 +10,17 @@ const GetAllLocations = () => {
     setLocationData(elem);
     setLocationId(elem.id);
   };
-  const [location, setLocation] = useState(locations);
+  const [location, setLocation] = useState([]);
 
   const filter = (e) => {
-    if (e.target.value === "") return setLocation(locations)
-    let founded = location.filter(elem => elem.name.includes(e.target.value))
+    if (e.target.value == "") return setLocation(locations)
+    console.log(e)
+    console.log(e.target.value)
+    let founded = locations.filter(elem => elem.name.includes(e.target.value))
     setLocation(founded)
   }
-
+  
+ 
   return (
     <div className="bg">
       <div className="section-container">
@@ -25,7 +28,7 @@ const GetAllLocations = () => {
           className="input"
           type="text"
           placeholder="Search for locations..."
-          onKeyUp={(e) => filter(e)}
+          onKeyUpCapture={(e) => filter(e)}
         />
         <div className="filter-container">
           <article className="card-container">
