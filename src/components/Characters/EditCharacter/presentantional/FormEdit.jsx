@@ -19,7 +19,6 @@ function errorHandle(errors) {
     },
   };
 }
-
 const Schema = Yup.object().shape({
   name: Yup.string().required(TAGS_VALIDATION_FORM.NAME.IS_REQUIRED),
 });
@@ -61,7 +60,7 @@ export default function FormEdit() {
               Guardar cambios
             </button>
           </Form>
-        );
+        );  
       }}
     </Formik>
   );

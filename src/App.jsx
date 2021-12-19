@@ -34,7 +34,6 @@ function App() {
               <Route path="/Characters" element={<Characters />}>
                 <Route path="getAllChars" element={<GetAll />} />
                 <Route path="addChar" element={<AddChar />} />
-                <Route path="getChar" element={<GetChar />} />
               </Route>
               <Route path="/Locations" element={<Locations />}>
                 <Route path="getAllLocations" element={<GetAllLocations />} />

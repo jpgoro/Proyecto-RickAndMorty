@@ -2,7 +2,6 @@ import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { motion } from "framer-motion";
-import "./Login.scss" 
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 function errorHandle(errors) {
@@ -60,7 +59,7 @@ const Login = () => {
     <>
       <motion.div className="portal" variants={portal} initial="initial" animate="animate"><motion.img className="img" src="src\portal-rick-and-morty.gif"  ></motion.img></motion.div> 
       <div className="form-user bg">
-      <motion.div className="hola" initial={{opacity:0}} animate={{opacity:1, transition:{delay:2, ease:"easeInOut"}}} > 
+      <motion.div initial={{opacity:0}} animate={{opacity:1, transition:{delay:2, ease:"easeInOut"}}} > 
         <Formik
           initialValues={initialValue}
           validationSchema={Schema}

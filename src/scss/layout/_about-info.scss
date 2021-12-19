@@ -7,12 +7,10 @@
     background: rgba(0, 0, 0, 0.322);
     box-shadow: 0px 1px 3px 5px #f5f6fa26;
     border-radius: 5px;
-    font-size: 1.4rem;
     &__close{
         position: absolute;
         top: 4px;
         right: 4px;
-        font-size: 20px;
         border: none;
         color: #fff;
         font-weight: 700;
@@ -26,3 +24,9 @@
     font-size: 23px;
     margin: 1px 6px 0 0;
 }
+
+.about-container__close:hover{
+    transform: rotate(0.5turn);
+    color: #fff;
+}
+

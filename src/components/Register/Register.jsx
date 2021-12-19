@@ -106,10 +106,8 @@ const Register = () => {
 
 export default Register;
 
-
 /* 
   Estado en el contexto que si venis de login el estado sea true.
   Si ahora venis Register el estado sea true.
   Si venis de cualquier que sea false
-
 */

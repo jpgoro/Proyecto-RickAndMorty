@@ -1,6 +1,5 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { useState } from "react";
-import "./getChar.scss";
 
 const baseUrl = "http://rickandmortyapi.com/api/character";
 const GetChar = () => {
