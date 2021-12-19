@@ -17,7 +17,6 @@ const GetAll = () => {
     let founded = chars.filter(elem => elem.name.toLowerCase().includes(e.target.value.toLowerCase()))
     setCharacters(founded)
   }
-
   return (
     <div className="bg">
       <div className="section-container">

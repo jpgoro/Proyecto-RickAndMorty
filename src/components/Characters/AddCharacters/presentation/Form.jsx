@@ -49,11 +49,12 @@ export default function Reel() {
   const { chars, setChars } = useContext(CharContext)
   let initialValue = { name: "", gender: "", species: "", status: "", image: "https://rickandmortyapi.com/api/character/avatar/19.jpeg" }
   const [status, setStatus] = useState()
-  const fnValidationForm = (v) => {
+  const fnValidationForm = (v, {resetForm}) => {
     setChars(
       [...chars, { ...v, id: chars.length + 1 }]
     )
-    alert("Character created")
+    resetForm();
+    alert("Character created");
   }
   return (
     <Formik
