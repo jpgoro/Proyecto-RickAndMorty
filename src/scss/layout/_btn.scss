@@ -18,7 +18,7 @@
 box-shadow: 6px 6px 19px -4px rgba(0,0,0,0.75);
   &:hover {
     filter: brightness(1);
-    color: rgb(0, 0, 0);
+    color: #fff;
   }
 }
 
@@ -29,7 +29,7 @@ box-shadow: 6px 6px 19px -4px rgba(0,0,0,0.75);
   background-color: #940404;
   border-radius: 16px;
   border-width: 0 0 3px 2px;
-  color: #fff;
+  color: #94ff00;
   font-family: "RoadRage-Regular";
   font-size: 24px;
   height: 35px;
@@ -40,49 +40,27 @@ box-shadow: 6px 6px 19px -4px rgba(0,0,0,0.75);
   width: 60px;
   &:hover {
     filter: brightness(1);
-    color: #94ff00;
+    color: #fff;
     cursor: pointer;
   }
 }
 
-
 /////     guardar cambios en Edit/ add Character    ////
 .submit-btn {
-  background-color: #432e1e;
+  background: #851313;
   border: solid transparent;
   border-radius: 16px;
-  border-width: 0 0 4px;
-  color: whitesmoke;
+  color: #94ff00;
   cursor: pointer;
   font-family: "RoadRage-Regular";
   font-size: 23px;
-  font-weight: 700;
   letter-spacing: 0.8px;
-  overflow: visible;
   height: 40px;
-  text-align: center;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter 0.2s;
-  user-select: none;
   width: 150px;
 }
-.submit-btn::after {
-  background-clip: padding-box;
-  background-color: #5b3e28;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
-.submit-btn:hover:not(:disabled) {
+
+.submit-btn:hover {
   filter: brightness(1.1);
-  color: #74c20d;
+  color: #fff;
 }
 

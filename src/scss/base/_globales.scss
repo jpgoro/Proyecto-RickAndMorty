@@ -5,8 +5,15 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: "RoadRage-Regular";
+}
+
+@font-face {
+  font-family: "RoadRage-Regular";
+  src: local("RoadRage-Regular"),
+    url("../../fonts/RoadRage-Regular.ttf") format("truetype");
+  font-weight: bold;
 }
 
 a {

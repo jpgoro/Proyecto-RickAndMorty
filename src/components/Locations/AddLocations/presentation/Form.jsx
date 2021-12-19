@@ -2,7 +2,6 @@ import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { useContext } from "react";
 import LocationContext from "../../../../contexts/locationContext/locationContext";
-import "./Form.scss"
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
