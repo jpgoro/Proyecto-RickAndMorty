@@ -1,5 +1,5 @@
 const express = require("express")
-const {getAllUsers,getUser,deleteUser,updateUser,register,login}  = require("../controllers/Usercontrollers")
+const {getAllUsers,deleteUser,updateUser,register,login}  = require("../controllers/Usercontrollers")
 const UserRouter = express.Router()
 
 UserRouter.get("/all",getAllUsers)

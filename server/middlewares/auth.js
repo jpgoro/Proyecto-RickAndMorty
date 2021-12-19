@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 const User = require("../db/models/User")
 
 
-exports.protect = async (req,res)=>{
+exports.protect = async (req,res,next)=>{
     let token;
     if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")){
         token= req.headers.authorization.split(" ")[1]
@@ -15,7 +15,8 @@ exports.protect = async (req,res)=>{
         const user = await User.findById(decoded.id)
         if(!user) res.status(404).json({error:true,message:"Not found this id"})
         req.user = user
+        next()
     }catch(error){
-
+        res.status(401).json({error:true,message:error.message})
     }
 }

@@ -1,10 +1,9 @@
-import React,{useContext, useState, useEffect} from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import "./Register.scss";
-import RouterContext from "../../contexts/historyContext/history";
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router";
+import axios from "axios";
 
 function errorHandle(errors) {
   return {
@@ -35,7 +34,14 @@ const Schema = Yup.object().shape({
     .max(40, "Password must not exceed 40 characters")
 });
 
-
+const registerUser = (body,nav)=>{
+  axios.post("http://localhost:5002/users/register",body)
+    .then(res=>{
+    console.log(res)
+    nav("/login")
+  })
+  .catch(err=>console.log(err))
+}
 
 const portal = {
   animate:{
@@ -50,7 +56,7 @@ const portal = {
 
 const Register = () => {
   const initialValue = { username:"", email:"", password:"" };
- 
+  const navigate = useNavigate()
 
   return (
     <>
@@ -60,7 +66,9 @@ const Register = () => {
       <Formik
         initialValues={initialValue}
         validationSchema={Schema}
-        onSubmit={(v)=>{console.log(v)}}
+        onSubmit={(v)=>{
+          registerUser(v,navigate)
+        }}
       >
         {({ errors }) => {
           return (
