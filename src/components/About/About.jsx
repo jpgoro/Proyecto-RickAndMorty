@@ -21,8 +21,8 @@ const About = ({modalUp,setModalUp}) => {
       { modalUp && <motion.div className="backdrop">
         <motion.div className="about-container" >
           <motion.button className="about-container__close" onClick={()=>setModalUp(null)}>X</motion.button>  
-          <motion.h2 style={{color:"#94ff00"}}>Rick and Morty</motion.h2>
-          <motion.p style={{color:"#fff",letterSpacing:"2px"}}>
+          <motion.h2 style={{color:"#94ff00", fontSize:"45px"}}>Rick and Morty</motion.h2>
+          <motion.p style={{color:"#fff",letterSpacing:"2px", fontSize:"27px"}}>
             Rick and Morty is an American adult animated science fiction sitcom
             created by Justin Roiland and Dan Harmon for Cartoon Network's
             nighttime programming block, Adult Swim. The series follows the

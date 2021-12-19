@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import backgroundvideo from "./video/videorickandmorty(corto).mp4"
+import backgroundvideo from "./video/video-bg.mp4"
 import About from "../About/About";
 import "../../scss/app.scss"
 import "../../scss/base/_globales.scss"
