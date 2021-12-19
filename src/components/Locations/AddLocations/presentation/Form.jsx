@@ -42,10 +42,11 @@ const Schema = Yup.object().shape({
 export default function Reel() {
   let initialValue = { name: "", type: "", dimension: "" }
   const { locations, setLocations } = useContext(LocationContext)
-  const fnValidationForm = (v) => {
+  const fnValidationForm = (v, {resetForm}) => {
     setLocations(
       [...locations, { ...v, id: locations.length + 1 }]
     )
+    resetForm()
     alert("Character created")
   }
 

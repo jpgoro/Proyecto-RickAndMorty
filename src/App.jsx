@@ -22,7 +22,7 @@ import Login from "./components/Login/Login";
 import SearchLocations from "./components/Locations/GetLocation/SearchLocations";
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <PrevProvider>
         <LocationProvider>
@@ -32,7 +32,6 @@ function App() {
               <Route path="/Characters" element={<Characters />}>
                 <Route path="getAllChars" element={<GetAll />} />
                 <Route path="addChar" element={<AddChar />} />
-                <Route path="getChar" element={<GetChar />} />
               </Route>
               <Route path="/Locations" element={<Locations />}>
                 <Route path="getAllLocations" element={<GetAllLocations />} />
