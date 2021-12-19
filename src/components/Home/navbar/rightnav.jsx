@@ -1,8 +1,8 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-
+import { useContext, useEffect } from "react";
+import UserContext from "../../../contexts/userContext/UserContext";
 
 const Ul = styled.ul`
     list-style: none;
@@ -27,10 +27,29 @@ const Ul = styled.ul`
 `
 
 const RightNavbar = ({ open }) => {
+    const {isLogged,setIsLogged} = useContext(UserContext)
+    console.log(isLogged)
+    const deleteSession= ()=>{
+        setIsLogged(true)
+        localStorage.removeItem("UserToken")
+    }
+    useEffect(() => {
+      localStorage.getItem("UserToken") ? setIsLogged(false) : setIsLogged(true)
+    }, [])
     return (
         <Ul open={open}>
-            <Link className="primary-btn" to="/Login">Log in</Link>
-            <Link className="primary-btn" to="/Register">Sign Up</Link>
+            {
+                isLogged ?
+                    (<>
+                        <Link className="primary-btn" to="/Login">Log in</Link>
+                        <Link className="primary-btn" to="/Register">Sign Up</Link>
+                        </>)
+                    :
+                    (
+                        <Link className="primary-btn" to="/" onClick={()=> deleteSession()} >Log out</Link>
+                    )
+            }
+            
         </Ul>
     )
 }

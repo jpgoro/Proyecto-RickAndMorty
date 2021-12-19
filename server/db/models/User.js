@@ -11,7 +11,7 @@ const UserSchema = new Schema({
   password: {
     type: String,
     minlength: 6,
-    select:false
+    select:false 
   },
   email:{
     type: String,
@@ -24,17 +24,26 @@ const UserSchema = new Schema({
 },{versionKey:false});
 
 UserSchema.pre("save", async function(next){
-  const salt = await bcrypt.genSalt(10)
-  this.password = await bcrypt.hash(this.password,salt)
-  next()
+  const user = this
+  const SALT = 10
+  if(!user.isModified("password")){
+    return next()
+  }
+  try{
+    let crypt = await bcrypt.hash(user.password,SALT)
+    user.password = crypt
+    return next()
+  }catch(err){
+    return next(err)
+  }
 }
 )
 
-UserSchema.methods.matchPasswords = async function(password){
-   return await bcrypt.compare(password,this.password)
+UserSchema.methods.matchPasswords = function(password){
+   return bcrypt.compare(password,this.password)
 }
 
-UserSchema.method.signToken = function (){
+UserSchema.methods.signToken = function (){
   return jwt.sign({id:this._id},process.env.JWT_SECRET,{expiresIn: process.env.JWT_EXPIRE})
 }
 

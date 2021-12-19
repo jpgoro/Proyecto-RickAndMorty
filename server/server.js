@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 4000
 const characterRouter = require('./routes/characterRoutes')
 const locationRouter = require('./routes/locationRoutes')
 const UserRouter = require('./routes/userRoutes')
+const PrivateRouter = require("./routes/private")
 
 connectDB()
 app.use(express.json())
@@ -23,6 +24,7 @@ app.use("/locations",locationRouter)
 
 app.use("/users", UserRouter)
 
+app.use("/private",PrivateRouter)
 
 
 const server = app.listen(PORT,(req,res)=>{

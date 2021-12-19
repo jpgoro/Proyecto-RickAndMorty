@@ -1,9 +1,9 @@
-import React, { useContext,useState, useEffect } from "react";
-import RouterContext from "../../contexts/historyContext/history";
+import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { motion } from "framer-motion";
-
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 function errorHandle(errors) {
   return {
     email() {
@@ -41,10 +41,19 @@ const portal = {
   }
 } 
 
+const tokenStore = (body,nav)=>{
+  axios.post("http://localhost:5002/users/login",body)
+    .then(res=>{
+    console.log(res)
+    localStorage.setItem("UserToken",res.data.token)
+    nav("/")
+  })
+  .catch(err=>console.log(err))
+}
 
 const Login = () => {
   const initialValue = { username: "", email: "", password: "" };
- 
+  const navigate = useNavigate()
 
   return (
     <>
@@ -55,7 +64,7 @@ const Login = () => {
           initialValues={initialValue}
           validationSchema={Schema}
           onSubmit={(v) => {
-            console.log(v);
+            tokenStore(v,navigate)
           }}
         >
           {({ errors }) => {

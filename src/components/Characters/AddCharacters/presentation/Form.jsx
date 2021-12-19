@@ -65,9 +65,9 @@ export default function Reel() {
       {({ errors }) => {
         return (
           <Form className="form-container" >
-            <Field name="name" placeholder="Enter a name..." />
+            <Field name="name"  autocomplete="off" placeholder="Enter a name..." />
             {errorHandle(errors).name()}
-            <Field name="gender" placeholder="Enter a gender..." />
+            <Field name="gender" autocomplete="off" placeholder="Enter a gender..." />
             {errorHandle(errors).gender()}
             <Field name="species" placeholder="Enter a specie..." />
             {errorHandle(errors).species()}

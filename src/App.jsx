@@ -7,6 +7,7 @@ import "./fonts/get_schwifty.ttf";
 import "./fonts/RoadRage-Regular.ttf";
 import { PrevProvider } from "./contexts/historyContext/history";
 import { CharProvider } from "./contexts/charContext/charContext";
+import { UserProvider } from "./contexts/userContext/UserContext";
 // Components
 import GetAll from "./components/Characters/GetAll/GetAll";
 import Navbar from "./components/Home/navbar/navbar";
@@ -22,7 +23,8 @@ import Login from "./components/Login/Login";
 import SearchLocations from "./components/Locations/GetLocation/SearchLocations";
 function App() {
   return (
-    <div>
+    <div className="App">
+      <UserProvider>
       <Navbar />
       <PrevProvider>
         <LocationProvider>
@@ -43,6 +45,7 @@ function App() {
           </CharProvider>
         </LocationProvider>
       </PrevProvider>
+      </UserProvider>
     </div>
   );
 }
