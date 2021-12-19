@@ -1,12 +1,9 @@
 :root {
   --card-height: 16rem;
-  --teal: #62a4ab;
-  --white: #fefefe;
   --shadow-small: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.15),
     -0.0625rem -0.0625rem 0.125rem rgba(0, 0, 0, 0.1);
   --shadow-medium: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15),
     -0.125rem -0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-  --card-radius: 0.25rem;
 }
 .card-container {
   justify-content: center;
@@ -20,15 +17,16 @@
 }
 .bg {
   background: url("https://images4.alphacoders.com/992/thumb-1920-992073.jpg");
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  background-attachment: fixed;
 }
 
 .card-back,
 .card-front {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: var(--card-radius);
+  border-radius: 0.25rem;
   height: 15rem;
   width: 15rem;
   overflow: hidden;
@@ -39,7 +37,6 @@
 .card-back {
   font-size: 1.8rem;
   transform: rotateY(180deg);
-  // box-shadow: 1px 1px 5px 1px #94ff00;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,20 +62,16 @@
 
 .card-button {
   background: transparent;
-  // border: 0 none;
-  // border-radius: var(--card-radius);
-  // box-shadow: var(--shadow-small);
-  height: 16rem;
+  height: 15rem;
+  width: 15rem;
   position: relative;
   transform: rotateY(0) scale(1);
   transform-style: preserve-3d;
   transition: transform 0.25s ease-in-out;
-  width: 16rem;
 }
 
 .card-button:focus,
 .card-button:hover {
-  box-shadow: var(--shadow-medium);
   cursor: pointer;
   outline: 0 none;
   transform: rotateY(0) scale(1.05);
@@ -93,10 +86,6 @@
   transform: rotateY(180deg) scale(1);
 }
 
-.card__detail {
-  text-align: start;
-}
-
 .card-image {
   grid-column: 1;
   grid-row: 1;
@@ -105,8 +94,6 @@
   width: 100%;
 }
 .card-image-back {
-  // grid-column: 1;
-  // grid-row: 1;
   height: 16rem;
   object-fit: cover;
   width: 100%;
@@ -150,6 +137,9 @@
   text-align: start;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
+}
+.card__detail {
+  text-align: start;
 }
 
 .card__term {

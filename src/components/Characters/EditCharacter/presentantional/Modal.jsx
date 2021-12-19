@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import CharContext from "../../../../contexts/charContext/charContext";
 import "./Modal.scss";
@@ -10,11 +10,10 @@ const Modal = () => {
   return (
       <AnimatePresence exitBeforeEnter>
         {charsId && (
-            <motion.div  className="backdrop">
-              <motion.div className="card-back" >
-                {/* <motion.img className="" src={charsData.image}></motion.img> */}
+            <div className="backdrop">
+              <div className="card-back" >
                 <FormEdit/>
-                <motion.div
+                <div
                   className="modal--edit__close"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -23,9 +22,9 @@ const Modal = () => {
                   }}
                 >
                   <FaWindowClose className="card__close"/>
-                </motion.div>
-              </motion.div>
-              </motion.div>
+                </div>
+              </div>
+              </div>
         )}
       </AnimatePresence>
   );
