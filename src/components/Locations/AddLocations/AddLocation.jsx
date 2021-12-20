@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from "./presentational/Form"
+import Form from "./presentation/Form"
 const AddLocation = () => {
     return (
         <article className="bg">
