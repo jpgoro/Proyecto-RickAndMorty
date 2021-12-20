@@ -7,7 +7,7 @@ const Locations = () => {
       <ul className="links-container">
         <li>
           <Link className="primary-btn" to="/Locations/getAllLocations">
-            Get All Locations
+            All Locations
           </Link>
         </li>
         <li>

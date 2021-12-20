@@ -20,6 +20,17 @@
     filter: brightness(1);
     color: #fff;
   }
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    top: 60px;
+    font-size: 13px;
+    height: 25px;
+    width: 90px;
+    
+  }
 }
 
 /////    edit-button / get-button     ////
@@ -77,8 +88,7 @@
 .btn-close:hover {
   color: #b62323;
   font-size: 40px;
-  }
-
+}
 
 .btn-close-edit {
   font-family: "RoadRage-Regular";
@@ -98,4 +108,4 @@
 .btn-close-edit:hover {
   color: #b62323;
   font-size: 26px;
-  }
+}
