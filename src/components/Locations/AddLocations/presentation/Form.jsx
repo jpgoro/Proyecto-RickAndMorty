@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import LocationContext from "../../../../contexts/locationContext/locationContext";
 import swal from 'sweetalert'
 
@@ -41,6 +41,7 @@ const Schema = Yup.object().shape({
 
 export default function Reel() {
   let initialValue = { name: "", type: "", dimension: "" }
+  
   const { locations, setLocations } = useContext(LocationContext)
   const fnValidationForm = (v, {resetForm}) => {
     setLocations(
@@ -68,6 +69,7 @@ export default function Reel() {
             {errorHandle(errors).type()}
             <Field name="dimension" className="name" autoComplete="off"  placeholder="dimension" />
             {errorHandle(errors).dimension()}
+            
             <button className="submit-btn" type="submit" >Add Location</button>
           </Form>
         )

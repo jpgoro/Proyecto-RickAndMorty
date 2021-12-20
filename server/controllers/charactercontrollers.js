@@ -16,7 +16,7 @@ exports.getCharacter = async (req,res,next)=>{
     let {name} = req.body
     try {
         let user = await Character.findOne({name},"name gender status").exec()
-        if (!user) res.status(406).json({error:true,message:"No se encontro el usuario"})
+        if (!user) return res.status(406).json({error:true,message:"No se encontro el usuario"})
         res.status(202).json({error:false,data:user})
     } catch (error) {
         res.status(404).json({error:true,message:error.message})

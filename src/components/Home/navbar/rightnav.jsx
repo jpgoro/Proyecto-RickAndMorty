@@ -29,23 +29,22 @@ const Ul = styled.ul`
 const RightNavbar = ({ open }) => {
     const {isLogged,setIsLogged} = useContext(UserContext)
     const deleteSession= ()=>{
-        setIsLogged(true)
+        setIsLogged(false)
         localStorage.removeItem("UserToken")
     }
-    useEffect(() => {
-      localStorage.getItem("UserToken") ? setIsLogged(false) : setIsLogged(true)
-    }, [])
+    
     return (
         <Ul open={open}>
             {
                 isLogged ?
-                    (<>
-                        <Link className="primary-btn" to="/Login">Log in</Link>
-                        <Link className="primary-btn" to="/Register">Sign Up</Link>
-                        </>)
+                    ( <Link className="primary-btn" to="/" onClick={()=> deleteSession()} >Log out</Link>
+                   )
                     :
                     (
-                        <Link className="primary-btn" to="/" onClick={()=> deleteSession()} >Log out</Link>
+                        <>
+                        <Link className="primary-btn" to="/Login">Log in</Link>
+                        <Link className="primary-btn" to="/Register">Sign Up</Link>
+                        </>
                     )
             }
             

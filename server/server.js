@@ -17,7 +17,6 @@ app.use(express.json())
 app.use(cors())
 app.use(methodOverride())
 
-
 app.use("/characters",characterRouter)
 
 app.use("/locations",locationRouter)
@@ -25,6 +24,12 @@ app.use("/locations",locationRouter)
 app.use("/users", UserRouter)
 
 app.use("/private",PrivateRouter)
+
+app.use((err,req,res,next)=>{
+    if(res.headersSent){
+        return next(err)
+    }
+})
 
 
 const server = app.listen(PORT,(req,res)=>{
