@@ -33,7 +33,7 @@ const About = ({ modalUp, setModalUp }) => {
                 style={{
                   color: "#fff",
                   letterSpacing: "2px",
-                  fontSize: "27px",
+          
                 }}
               >
                 Rick and Morty is an American adult animated science fiction
