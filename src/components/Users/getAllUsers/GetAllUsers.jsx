@@ -13,4 +13,4 @@ const GetAllUsers = () => {
     )
 }
 
-export default GetAllUsers
+export default GetAllUsers;

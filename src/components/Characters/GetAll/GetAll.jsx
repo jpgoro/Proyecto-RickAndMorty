@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import EditCharacter from "../EditCharacter/EditCharacter";
-import CharProvider from '../../../contexts/charContext/charContext';
+import CharProvider from "../../../contexts/charContext/charContext";
 
 const GetAll = () => {
-  const { chars, setCharsId, setCharsData } = useContext(CharProvider)
+  const { chars, setCharsId, setCharsData } = useContext(CharProvider);
   const setModal = (elem) => {
     setCharsData(elem);
     setCharsId(elem.id);
@@ -11,14 +11,16 @@ const GetAll = () => {
   const [characters, setCharacters] = useState(chars);
 
   useEffect(() => {
-      setCharacters(chars)
-  } ,[chars])
+    setCharacters(chars);
+  }, [chars]);
 
   const filter = (e) => {
-    if (e.target.value === "") return setCharacters(chars)
-    let founded = chars.filter(elem => elem.name.toLowerCase().includes(e.target.value.toLowerCase()))
-    setCharacters(founded)
-  }
+    if (e.target.value === "") return setCharacters(chars);
+    let founded = chars.filter((elem) =>
+      elem.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setCharacters(founded);
+  };
   return (
     <div className="bg">
       <div className="section-container">
@@ -47,7 +49,12 @@ const GetAll = () => {
                     <h4>Status: {elem.status}</h4>
                     <h4>Specie: {elem.species}</h4>
                   </div>
-                  <button onClick={() => setModal(elem)} className="secondary-btn">Edit</button>
+                  <button
+                    onClick={() => setModal(elem)}
+                    className="secondary-btn"
+                  >
+                    Edit
+                  </button>
                 </div>
               </section>
             );

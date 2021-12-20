@@ -1,11 +1,11 @@
-import React from 'react'
-import Form from "./presentational/Form"
+import React from "react";
+import Form from "./presentation/Form";
 const AddLocation = () => {
-    return (
-        <article className="bg">
-            <Form/>
-        </article>
-    )
-}
+  return (
+    <article className="bg">
+      <Form />
+    </article>
+  );
+};
 
-export default AddLocation
+export default AddLocation;

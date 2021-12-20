@@ -43,12 +43,12 @@
 }
 .card-edit {
   border: 3px solid black;
-  box-shadow:rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.3);
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  
 }
 .card-edit-close {
   position: absolute;
@@ -126,7 +126,7 @@
   height: 100%;
   transform: rotateY(180deg);
   position: absolute;
-  filter: blur(2px);
+  filter: grayscale(100%);
 }
 
 .card__item {

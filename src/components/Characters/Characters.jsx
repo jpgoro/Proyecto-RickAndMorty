@@ -31,4 +31,4 @@ const Characters = () => {
     )
 }
 
-export default Characters
+export default Characters;

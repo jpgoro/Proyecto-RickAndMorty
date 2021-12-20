@@ -1,11 +1,11 @@
-import Form from "./presentation/Form"
+import Form from "./presentation/Form";
 
 const AddChar = () => {
-    return (
-        <article className="bg">
-            <Form/>
-        </article>
-    )
-}
+  return (
+    <article className="bg">
+      <Form />
+    </article>
+  );
+};
 
-export default AddChar
+export default AddChar;
