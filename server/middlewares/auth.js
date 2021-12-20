@@ -4,11 +4,13 @@ const User = require("../db/models/User")
 
 exports.protect = async (req,res,next)=>{
     let token;
-    if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")){
-        token= req.headers.authorization.split(" ")[1]
+    let auth = req.get("Authorization")
+    if(auth && auth.startsWith("Bearer")){
+        token= auth.split(" ")[1]
     }
-    if(!token){
-        res.status(401).json({error:true,message:"Not authorized to access this route"})
+    if(!token || token==""){
+        console.log(token)
+        return res.status(401).json({error:true,message:"Not authorized to access this route"})
     }
     try{
         const decoded = jwt.verify(token,process.env.JWT_SECRET)
@@ -17,6 +19,7 @@ exports.protect = async (req,res,next)=>{
         req.user = user
         next()
     }catch(error){
+        console.log(error)
         res.status(401).json({error:true,message:error.message})
     }
 }

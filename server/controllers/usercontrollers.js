@@ -33,10 +33,10 @@ exports.login = async (req,res,next)=>{
     let {email,password} = req.body
     try {
         const user = await User.findOne({email}).select("+password")
-        if(!user) res.status(404).json({error:true,message:"No se encontro un usuario"})
+        if(!user) return res.status(404).json({error:true,message:"No se encontro un usuario"})
         const isMatch = await user.matchPasswords(password)
         console.log(isMatch)
-        if(!isMatch) res.status(404).json({error:true,message:"Invalid Credentials"})
+        if(!isMatch) return res.status(404).json({error:true,message:"Invalid Credentials"})
         sendToken(user,201,res) 
     } catch (error) {
         res.status(505).json({error:true,message:error.message})
