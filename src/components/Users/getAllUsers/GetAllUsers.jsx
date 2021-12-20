@@ -1,5 +1,6 @@
 import React,{useEffect,useState,useContext} from 'react'
 import UserContext from '../../../contexts/userContext/UserContext'
+import '../../../scss/app.scss'
 
 const GetAllUsers = () => {
     const {users} = useContext(UserContext)
