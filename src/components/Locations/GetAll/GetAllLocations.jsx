@@ -1,8 +1,15 @@
 import { useState, useEffect, useContext } from "react";
 import LocationProvider from '../../../contexts/locationContext/locationContext';
 import EditLocations from "../EditLocations/EditLocations";
+import UserContext from "../../../contexts/userContext/UserContext";
+
 const GetAllLocations = () => {
   const { locations, setLocationId, setLocationData } = useContext(LocationProvider)
+  const {isLogged} = useContext(UserContext)
+    const [seeLogged,setSeeLogged] = useState(isLogged)
+    useEffect(()=>{
+        setSeeLogged(isLogged)
+    },[isLogged])
   const setModal = (elem) => {
     setLocationData(elem);
     setLocationId(elem.id);
@@ -47,7 +54,11 @@ const GetAllLocations = () => {
                     <h4>Type: {elem.type}</h4>
                     <h4>Dimension: {elem.dimension}</h4>
                   </div>
-                  <button onClick={() => setModal(elem)} className="secondary-btn">Edit</button>
+                  { seeLogged ?
+                    <button onClick={() => setModal(elem)} className="secondary-btn">Edit</button>
+                    :
+                    <button ostyle={{backgroundColor:"#cccccc",color: "#666666" }} className="secondary-btn">Edit</button>
+                  }
                 </div>
               </section>
             );

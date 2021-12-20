@@ -1,16 +1,15 @@
-import React,{useEffect,useState} from 'react'
-import axios from 'axios'
+import React,{useEffect,useState,useContext} from 'react'
+import UserContext from '../../../contexts/userContext/UserContext'
+
 const GetAllUsers = () => {
-    const [users,setUsers] = useState([])
-    useEffect(() => {
-        axios.get("")
-        .then(res=>setUsers(res.results))
-        .catch(err=>console.log(err))
-    }, [])
+    const {users} = useContext(UserContext)
+    const [usersReg,setUsersReg] = useState(users)
+    useEffect(()=>{
+        setUsersReg(users)
+    },[users])
+
     return (
-        <ul>
-            {users.map((el,i)=><li key={i}>{el.name}</li>)}
-        </ul>
+        <li style={{color:"white",fontSize:"20px",letterSpacing:"2px"}}>{`Created Users : ${usersReg.length}`}</li>
     )
 }
 

@@ -12,7 +12,6 @@ import { UserProvider } from "./contexts/userContext/UserContext";
 import GetAll from "./components/Characters/GetAll/GetAll";
 import Navbar from "./components/Home/navbar/navbar";
 import AddChar from "./components/Characters/AddCharacters/AddChar";
-import GetChar from "./components/Characters/getChar/GetChar";
 import { LocationProvider } from "./contexts/locationContext/locationContext";
 import Characters from "./components/Characters/Characters";
 import Locations from "./components/Locations/Locations";
@@ -20,7 +19,7 @@ import AddLocation from "./components/Locations/AddLocations/AddLocation";
 import GetAllLocations from "./components/Locations/GetAll/GetAllLocations";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
-import SearchLocations from "./components/Locations/GetLocation/SearchLocations";
+import EditUser from "./components/Users/EditUser/EditUser";
 function App() {
   return (
     <div className="App">
@@ -38,9 +37,10 @@ function App() {
               <Route path="/Locations" element={<Locations />}>
                 <Route path="getAllLocations" element={<GetAllLocations />} />
                 <Route path="addLocation" element={<AddLocation />} />
-              </Route>
+              </Route>/editUser
               <Route path="/Register" element={<Register />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="/editUser" element={<EditUser/>} />
             </Routes>
           </CharProvider>
         </LocationProvider>

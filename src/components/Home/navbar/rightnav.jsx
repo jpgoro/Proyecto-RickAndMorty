@@ -1,9 +1,8 @@
-
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState} from "react";
 import UserContext from "../../../contexts/userContext/UserContext";
-
+import GetAllUsers from "../../Users/GetAllUsers/GetAllUsers";
 const Ul = styled.ul`
     list-style: none;
     display: flex;
@@ -27,18 +26,27 @@ const Ul = styled.ul`
 `
 
 const RightNavbar = ({ open }) => {
-    const {isLogged,setIsLogged} = useContext(UserContext)
+    const {isLogged,setIsLogged,userInfo,setUserInfo} = useContext(UserContext)
+    const [data,setDataUser] = useState(userInfo)
+    console.log(data)
     const deleteSession= ()=>{
         setIsLogged(false)
+        setUserInfo({})
         localStorage.removeItem("UserToken")
     }
-    
+    useEffect(()=>{
+        setDataUser(userInfo)
+    },[userInfo])
     return (
         <Ul open={open}>
             {
                 isLogged ?
-                    ( <Link className="primary-btn" to="/" onClick={()=> deleteSession()} >Log out</Link>
-                   )
+                    (   <>
+                        <h3 style={{color:"white"}} >{`Hola ${data.username || "ASD"}!!`}</h3>
+                        <Link className="primary-btn" to="/" onClick={()=> deleteSession()}>Log out</Link>
+                        <Link className="primary-btn" to="/editUser">Edit Account</Link>
+                        </>
+                    )
                     :
                     (
                         <>
@@ -46,8 +54,9 @@ const RightNavbar = ({ open }) => {
                         <Link className="primary-btn" to="/Register">Sign Up</Link>
                         </>
                     )
+                
             }
-            
+            <GetAllUsers></GetAllUsers>
         </Ul>
     )
 }
