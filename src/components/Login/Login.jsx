@@ -95,6 +95,7 @@ const Login = () => {
                   {errorHandle(errors).email()}
                   <Field
                     name="password"
+                    type="password"
                     className="field"
                     placeholder="type a password..."
                   />
