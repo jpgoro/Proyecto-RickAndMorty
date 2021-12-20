@@ -98,6 +98,7 @@ const Login = () => {
                     name="password"
                     className="field"
                     placeholder="type a password..."
+                    input type="password"
                   />
                   {errorHandle(errors).password()}
                   <button className="submit-btn" type="submit">
