@@ -8,15 +8,15 @@ import axios from "axios";
 function errorHandle(errors) {
   return {
     username() {
-      return errors.username && <div className="status-error">{errors.username}</div>;
+      return errors.username && <div className="description-error">{errors.username}</div>;
     },
 
     email() {
-      return errors.email && <div className="status-error">{errors.email}</div>
+      return errors.email && <div className="description-error">{errors.email}</div>
       
     },
     password() {
-      return errors.password && <div className="status-error">{errors.password}</div>
+      return errors.password && <div className="description-error">{errors.password}</div>
 
     },
   };

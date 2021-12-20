@@ -1,14 +1,5 @@
 const CustomField = ({ form, status, setStatus }) => {
 
-    const chgStatus = () => {
-        if (cond == "Alive") {
-            setCond("Dead")
-            form.setFieldValue("status", "Dead")
-        } else {
-            setCond("Alive")
-            form.setFieldValue("status", "Alive")
-        }
-    }
     const handleAlive = () => {
         setStatus("Alive")
         form.setFieldValue("status", "Alive")

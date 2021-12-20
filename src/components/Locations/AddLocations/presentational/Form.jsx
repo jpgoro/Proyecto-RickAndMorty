@@ -2,7 +2,8 @@ import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { useContext,useState } from "react";
 import LocationContext from "../../../../contexts/locationContext/locationContext";
-import FileBase64 from "react-file-base64"
+import swal from 'sweetalert'
+
 const TAGS_VALIDATION_FORM = {
   NAME: {
     IS_REQUIRED: "Enter a valid name!"
@@ -47,7 +48,11 @@ export default function Reel() {
       [...locations, { ...v, id: locations.length + 1 }]
     )
     resetForm()
-    alert("Character created")
+    swal({
+      title: "Changes Saved",
+      icon: "success",
+      timer: "1300"
+    })
   }
 
   return (
@@ -58,11 +63,11 @@ export default function Reel() {
       {({ errors }) => {
         return (
           <Form className="form-container">
-            <Field name="name" className="name" placeholder="name" />
+            <Field name="name" className="name" autoComplete="off" placeholder="name" />
             {errorHandle(errors).name()}
-            <Field name="type" className="name" placeholder="type" />
+            <Field name="type" className="name" autoComplete="off" placeholder="type" />
             {errorHandle(errors).type()}
-            <Field name="dimension" className="name" placeholder="dimension" />
+            <Field name="dimension" className="name" autoComplete="off"  placeholder="dimension" />
             {errorHandle(errors).dimension()}
             
             <button className="submit-btn" type="submit" >Add Location</button>

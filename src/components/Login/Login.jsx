@@ -7,11 +7,11 @@ import { useNavigate } from 'react-router-dom';
 function errorHandle(errors) {
   return {
     email() {
-      return errors.email && <div className="status-error">{errors.email}</div>;
+      return errors.email && <div className="description-error">{errors.email}</div>;
     },
     password() {
       return (
-        errors.password && <div className="status-error">{errors.password}</div>
+        errors.password && <div className="description-error">{errors.password}</div>
       );
     },
   };

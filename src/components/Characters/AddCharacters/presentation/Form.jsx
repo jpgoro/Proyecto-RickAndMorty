@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { useState, useContext } from "react";
 import CharContext from "../../../../contexts/charContext/charContext";
 import CustomField from "./presentational/CustomField";
+import swal from "sweetalert";
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -54,7 +55,12 @@ export default function Reel() {
       [...chars, { ...v, id: chars.length + 1 }]
     )
     resetForm();
-    alert("Character created");
+    setStatus("")
+    swal({
+      title: "Changes Saved",
+      icon: "success",
+      timer: "1300"
+    })
   }
   return (
     <Formik
@@ -65,11 +71,11 @@ export default function Reel() {
       {({ errors }) => {
         return (
           <Form className="form-container" >
-            <Field name="name"  autocomplete="off" placeholder="Enter a name..." />
+            <Field name="name" autoComplete="off" placeholder="Enter a name..." />
             {errorHandle(errors).name()}
-            <Field name="gender" autocomplete="off" placeholder="Enter a gender..." />
+            <Field name="gender" autoComplete="off" placeholder="Enter a gender..." />
             {errorHandle(errors).gender()}
-            <Field name="species" placeholder="Enter a specie..." />
+            <Field name="species" autoComplete="off" placeholder="Enter a specie..." />
             {errorHandle(errors).species()}
             <Field status={status} setStatus={setStatus} name="status" component={CustomField} />
             {errorHandle(errors).status()}

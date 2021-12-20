@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import "../../scss/app.scss"
 
 const modal = {
   animate:{
@@ -20,7 +19,7 @@ const About = ({modalUp,setModalUp}) => {
     <AnimatePresence initial={false} exitBeforeEnter>
       { modalUp && <motion.div className="backdrop">
         <motion.div className="about-container" >
-          <motion.button className="about-container__close" onClick={()=>setModalUp(null)}>X</motion.button>  
+          <motion.button className="btn-close" onClick={()=>setModalUp(null)}>X</motion.button>  
           <motion.h2 style={{color:"#94ff00", fontSize:"45px"}}>Rick and Morty</motion.h2>
           <motion.p style={{color:"#fff",letterSpacing:"2px", fontSize:"27px"}}>
             Rick and Morty is an American adult animated science fiction sitcom
