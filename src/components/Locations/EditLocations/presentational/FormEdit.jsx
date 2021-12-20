@@ -1,9 +1,9 @@
 import LocationContext from "../../../../contexts/locationContext/locationContext";
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
-import { useContext,useState,useEffect } from 'react'
+import { useContext} from 'react'
 import swal from 'sweetalert';
-import UserContext from '../../contexts/userContext/UserContext' 
+
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -46,11 +46,6 @@ const Schema = Yup.object().shape({
 
 export default function FormEdit() {
   const { locationData, setLocations, locationId, locations, setLocationId } = useContext(LocationContext)
-  const {isLogged} = useContext(UserContext)
-    const [seeLogged,setSeeLogged] = useState(isLogged)
-    useEffect(()=>{
-        setSeeLogged(isLogged)
-    },[isLogged])
   let initialValue = {
     name: locationData.name,
     type: locationData.type,

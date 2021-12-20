@@ -6,15 +6,17 @@ import UserContext from "../../../contexts/userContext/UserContext";
 const GetAllLocations = () => {
   const { locations, setLocationId, setLocationData } = useContext(LocationProvider)
   const {isLogged} = useContext(UserContext)
-    const [seeLogged,setSeeLogged] = useState(isLogged)
-    useEffect(()=>{
-        setSeeLogged(isLogged)
-    },[isLogged])
+  const [seeLogged,setSeeLogged] = useState(isLogged)
+  const [location, setLocation] = useState(locations);
   const setModal = (elem) => {
+    console.log(isLogged,seeLogged)
     setLocationData(elem);
     setLocationId(elem.id);
   };
-  const [location, setLocation] = useState(locations);
+  
+  useEffect(()=>{
+    setSeeLogged(isLogged)
+  },[isLogged])
 
   useEffect(() => {
     setLocation(locations);
@@ -66,7 +68,7 @@ const GetAllLocations = () => {
                   { seeLogged ?
                     <button onClick={() => setModal(elem)} className="secondary-btn">Edit</button>
                     :
-                    <button ostyle={{backgroundColor:"#cccccc",color: "#666666" }} className="secondary-btn">Edit</button>
+                    <button style={{backgroundColor:"#cccccc",color: "#666666" }} className="secondary-btn">Edit</button>
                   }
                 </div>
               </section>

@@ -1,15 +1,20 @@
 import { useState, useEffect, useContext } from "react";
 import EditCharacter from "../EditCharacter/EditCharacter";
 import CharProvider from "../../../contexts/charContext/charContext";
-
+import UserContext from "../../../contexts/userContext/UserContext";
 const GetAll = () => {
   const { chars, setCharsId, setCharsData } = useContext(CharProvider);
+  const {isLogged} = useContext(UserContext)
+  const [seeLogged,setSeeLogged] = useState(isLogged)
   const setModal = (elem) => {
     setCharsData(elem);
     setCharsId(elem.id);
   };
   const [characters, setCharacters] = useState(chars);
 
+  useEffect(()=>{
+    setSeeLogged(isLogged)
+  },[isLogged])
   useEffect(() => {
     setCharacters(chars);
   }, [chars]);
@@ -49,12 +54,11 @@ const GetAll = () => {
                     <h4>Status: {elem.status}</h4>
                     <h4>Specie: {elem.species}</h4>
                   </div>
-                  <button
-                    onClick={() => setModal(elem)}
-                    className="secondary-btn"
-                  >
-                    Edit
-                  </button>
+                  { seeLogged ?
+                    <button onClick={() => setModal(elem)} className="secondary-btn">Edit</button>
+                    :
+                    <button style={{backgroundColor:"#cccccc",color: "#666666" }} className="secondary-btn">Edit</button>
+                  }
                 </div>
               </section>
             );
