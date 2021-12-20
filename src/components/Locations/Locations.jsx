@@ -13,11 +13,11 @@ const Locations = () => {
         <div>
             <ul className="links-container">
                 <li>
-                    <Link className="primary-btn" to="/Locations/getAllLocations">Get All Locations</Link>
+                    <Link className="primary-btn" to="/Locations/getAllLocations">All<br/>Locations</Link>
                 </li>
                 {  seeLogged ? 
                     <li>
-                    <Link className="primary-btn" to="/Locations/addLocation" >Add Location</Link>
+                    <Link className="primary-btn" to="/Locations/addLocation" >Add<br/>Location</Link>
                     </li>
                     :
                     <li>

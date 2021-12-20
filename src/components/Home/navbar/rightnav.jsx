@@ -18,10 +18,11 @@ const Ul = styled.ul`
   top: 0;
   right: 0;
   height: auto;
-  width: 230px;
+  width: 180px;
   padding-top: 3.5rem;
   transition: transform 0.4s ease-in-out;
   border-radius: 6px;
+  align-items: center;
 `;
 
 const RightNavbar = ({ open }) => {
