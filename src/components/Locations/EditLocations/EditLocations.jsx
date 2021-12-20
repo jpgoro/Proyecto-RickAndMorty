@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import LocationContext from '../../../contexts/locationContext/locationContext';
 import { FaWindowClose } from "react-icons/fa";
-import FormEdit from './Reel/FormEdit';
+import FormEdit from './presentational/FormEdit';
 
 const EditLocations = () => {
   const { setLocationData, locationId, setLocationId } = useContext(LocationContext) /* setKicatuibs ki vit a ysar en el form */
