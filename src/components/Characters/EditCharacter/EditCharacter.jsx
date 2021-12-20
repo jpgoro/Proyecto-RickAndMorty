@@ -23,7 +23,7 @@ const EditCharacter = () => {
 
             {/* Close Button */}
             <div
-              className="btn-close"
+              className="btn-close-edit"
               onClick={(e) => {
                 e.stopPropagation();
                 setCharsId(null);

@@ -81,3 +81,24 @@
   color: #b62323;
   font-size: 40px;
   }
+
+
+.btn-close-edit {
+  font-family: "RoadRage-Regular";
+  color: #94ff00;
+  background: transparent;
+  font-size: 18px;
+  position: absolute;
+  top: 3px;
+  right: 15px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  height: 10px;
+  width: 10px;
+}
+
+.btn-close-edit:hover {
+  color: #b62323;
+  font-size: 23px;
+  }
