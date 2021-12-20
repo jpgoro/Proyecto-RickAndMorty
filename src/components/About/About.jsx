@@ -20,12 +20,12 @@ const About = ({ modalUp, setModalUp }) => {
         {modalUp && (
           <motion.div className="backdrop">
             <motion.div className="about-container">
-              <motion.button
-                className="btn-close"
+              <motion.div
+                className="btn-about"
                 onClick={() => setModalUp(null)}
               >
                 X
-              </motion.button>
+              </motion.div>
               <motion.h2 style={{ color: "#94ff00", fontSize: "45px" }}>
                 Rick and Morty
               </motion.h2>

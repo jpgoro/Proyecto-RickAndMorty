@@ -107,3 +107,17 @@
   color: #b62323;
   font-size: 24px;
   }
+
+.btn-about {
+  font-family: "RoadRage-Regular";
+    background: transparent;
+    font-size: 22px;
+    position: absolute;
+    top: 3px;
+    right: 18px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    height: 10px;
+    width: 10px;
+}
