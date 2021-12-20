@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const EditUsers = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default EditUsers
+export default EditUsers;

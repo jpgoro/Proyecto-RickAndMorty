@@ -2,69 +2,74 @@ import LocationContext from "../../../../contexts/locationContext/locationContex
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { useContext } from "react";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
-    IS_REQUIRED: "Enter a valid name!"
+    IS_REQUIRED: "Enter a valid name!",
   },
   TYPE: {
-    IS_REQUIRED: "Enter a valid type!"
+    IS_REQUIRED: "Enter a valid type!",
   },
   DIMENSION: {
-    IS_REQUIRED: "Enter a valid dimension!"
-  }
+    IS_REQUIRED: "Enter a valid dimension!",
+  },
 };
 
 function errorHandle(errors) {
   return {
-
     name() {
-      return errors.name && (<div className="location-error">{errors.name}</div>)
+      return errors.name && <div className="location-error">{errors.name}</div>;
     },
 
     type() {
-      return errors.type && (<div className="location-error">{errors.type}</div>)
+      return errors.type && <div className="location-error">{errors.type}</div>;
     },
     dimension() {
-      return errors.dimension && (<div className="location-error">{errors.dimension}</div>)
-    }
-
-  }
+      return (
+        errors.dimension && (
+          <div className="location-error">{errors.dimension}</div>
+        )
+      );
+    },
+  };
 }
 
 const Schema = Yup.object().shape({
   name: Yup.string().required(TAGS_VALIDATION_FORM.NAME.IS_REQUIRED),
   type: Yup.string().required(TAGS_VALIDATION_FORM.TYPE.IS_REQUIRED),
-  dimension: Yup.string().required(TAGS_VALIDATION_FORM.DIMENSION.IS_REQUIRED)
+  dimension: Yup.string().required(TAGS_VALIDATION_FORM.DIMENSION.IS_REQUIRED),
 });
 
 //Espero las props
 
 export default function FormEdit() {
-  const { locationData, setLocations, locationId, locations, setLocationId } = useContext(LocationContext)
+  const { locationData, setLocations, locationId, locations, setLocationId } =
+    useContext(LocationContext);
   let initialValue = {
     name: locationData.name,
     type: locationData.type,
-    dimension: locationData.dimension
+    dimension: locationData.dimension,
   };
 
   const fnValidationForm = (v) => {
     setLocations(
-      locations.map((el) => (el.id === locationId ? { ...el, ...v } : el)));
-    setLocationId(null)
+      locations.map((el) => (el.id === locationId ? { ...el, ...v } : el))
+    );
+    setLocationId(null);
     swal({
       title: "Changes Saved",
       icon: "success",
-      timer: "1300"
-    })
-  }
+      timer: "1300",
+    });
+  };
 
   return (
     <Formik
       initialValues={initialValue}
       validationSchema={Schema}
-      onSubmit={fnValidationForm}>
+      onSubmit={fnValidationForm}
+    >
       {({ errors }) => {
         return (
           <Form className="form-editCharacter">
@@ -77,13 +82,19 @@ export default function FormEdit() {
               {errorHandle(errors).type()}
             </div>
             <div className="field-container">
-              <Field name="dimension" autoComplete="off" placeholder="dimension" />
+              <Field
+                name="dimension"
+                autoComplete="off"
+                placeholder="dimension"
+              />
               {errorHandle(errors).dimension()}
             </div>
-            <button className="submit-btn" type="submit">Enviar</button>
+            <button className="submit-btn" type="submit">
+              Enviar
+            </button>
           </Form>
-        )
+        );
       }}
     </Formik>
-  )
+  );
 }
