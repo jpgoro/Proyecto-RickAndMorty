@@ -69,4 +69,8 @@ input {
   width: 100%;
   object-fit: cover;
   height: 100%;
+  transition: ease-out;
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
