@@ -13,10 +13,9 @@ const CustomField = ({form,cond,setCond}) => {
             form.setFieldValue("status","Alive")
         }
     }   
-
-
+    
     return (
-        <div className="form--editCharacter__status">
+        <div className="form-editCharacter__status">
             <button className={cond == "Alive" ? "alive" : "" }  type="button" onClick={()=> chgStatus()}>Alive</button>
             <button className={cond == "Dead" ? "dead" : "" } type="button" onClick={()=> chgStatus()}>Dead</button>
         </div>

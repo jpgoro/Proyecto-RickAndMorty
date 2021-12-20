@@ -1,34 +1,36 @@
-import React,{ useContext } from 'react'
-import { AnimatePresence } from 'framer-motion'
-import { FaWindowClose } from "react-icons/fa";
+import { useContext } from 'react'
 import LocationContext from '../../../contexts/locationContext/locationContext';
-import { motion } from 'framer-motion'
-import Reel from './Reel/Reel';
+import { FaWindowClose } from "react-icons/fa";
+import FormEdit from './Reel/FormEdit';
 
 const EditLocations = () => {
-    const {locationData,setLocationData,locationId,setLocationId} = useContext(LocationContext) /* setKicatuibs ki vit a ysar en el form */
-    return (
-        <AnimatePresence exitBeforeEnter>
-        {locationId && (
-            <motion.div  className="backdrop">
-              <motion.div className="modal--edit" layoutId={locationId}>
-                <motion.img className="modal--edit__img"></motion.img>
-                <Reel></Reel>
-                <motion.div
-                  className="modal--edit__close"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setLocationId(null);
-                    setLocationData({});
-                  }}
-                >
-                  <FaWindowClose/>
-                </motion.div>
-              </motion.div>
-              </motion.div>
-        )}
-      </AnimatePresence>
-    )
+  const { setLocationData, locationId, setLocationId } = useContext(LocationContext) /* setKicatuibs ki vit a ysar en el form */
+  return (
+    <>
+      {locationId && (
+        <div className="backdrop">
+          <div className="card-edit">
+
+            {/* Form */}
+            <FormEdit />
+            {/* Image */}
+            <img className="card-image-back-edit" src="https://i.ytimg.com/vi/BSymgfwoAmI/maxresdefault.jpg"></img>
+            {/* Close Button */}
+            <div
+              className="btn-close"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLocationId(null);
+                setLocationData({});
+              }}
+            >
+              <FaWindowClose />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
 }
 
 export default EditLocations

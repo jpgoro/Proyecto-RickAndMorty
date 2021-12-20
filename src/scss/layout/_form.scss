@@ -24,9 +24,21 @@
 
 
 
-.description-error,
-.status-error {
-  color: #e90e0e;
+.description-error {
+  color: #e99494;
   font-size: 1.4rem;
   letter-spacing: 1.2px;
+}
+.edit-error {
+  position: absolute;
+  left: 24%;
+  color: #e61010;
+  font-size: 1.4rem;
+}
+.location-error {
+  position: absolute;
+  left: 24%;
+  bottom: -42%;
+  color: #e9b1b1;
+  font-size: 1.4rem;
 }

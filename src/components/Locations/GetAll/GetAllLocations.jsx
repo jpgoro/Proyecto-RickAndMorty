@@ -1,30 +1,25 @@
 import { useState, useEffect, useContext } from "react";
 import LocationProvider from '../../../contexts/locationContext/locationContext';
 import EditLocations from "../EditLocations/EditLocations";
-import axios from "axios";
 const GetAllLocations = () => {
-  const url = "https://rickandmortyapi.com/api/location";
   const { locations, setLocationId, setLocationData } = useContext(LocationProvider)
   const setModal = (elem) => {
     setLocationData(elem);
-    setLocationId(elem.id); 
+    setLocationId(elem.id);
   };
   const [location, setLocation] = useState(locations);
+
+  useEffect(() => {
+    setLocation(locations)
+} ,[locations])
 
   const filter = (e) => {
     if (e.target.value == "") return setLocation(locations)
     let founded = locations.filter(elem => elem.name.toLowerCase().includes(e.target.value.toLowerCase()))
     setLocation(founded)
   }
-  
-  useEffect(() => {
-    axios.get(url)
-        .then(res => {
-          setLocation([...locations, ...res.data.results])
-        })
-        .catch(err => console.error(err))
-}, [])
 
+ 
   return (
     <div className="bg">
       <div className="section-container">

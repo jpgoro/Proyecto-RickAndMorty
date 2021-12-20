@@ -28,7 +28,6 @@ const Ul = styled.ul`
 
 const RightNavbar = ({ open }) => {
     const {isLogged,setIsLogged} = useContext(UserContext)
-    console.log(isLogged)
     const deleteSession= ()=>{
         setIsLogged(true)
         localStorage.removeItem("UserToken")

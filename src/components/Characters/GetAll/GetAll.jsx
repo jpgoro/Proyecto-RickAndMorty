@@ -1,16 +1,18 @@
 import { useState, useEffect, useContext } from "react";
-import Modal from "../EditCharacter/presentantional/Modal";
+import EditCharacter from "../EditCharacter/EditCharacter";
 import CharProvider from '../../../contexts/charContext/charContext';
 
-
 const GetAll = () => {
-
   const { chars, setCharsId, setCharsData } = useContext(CharProvider)
   const setModal = (elem) => {
     setCharsData(elem);
     setCharsId(elem.id);
   };
   const [characters, setCharacters] = useState(chars);
+
+  useEffect(() => {
+      setCharacters(chars)
+  } ,[chars])
 
   const filter = (e) => {
     if (e.target.value === "") return setCharacters(chars)
@@ -51,7 +53,7 @@ const GetAll = () => {
             );
           })}
         </article>
-        <Modal />
+        <EditCharacter />
       </div>
     </div>
   );

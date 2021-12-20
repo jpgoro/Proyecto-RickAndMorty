@@ -1,14 +1,15 @@
 
-.form--editCharacter {
+.form-editCharacter {
   display: flex;
   flex-direction: column;
   font-family: "RoadRage-Regular";
-  gap: 2.3rem;
-  margin: 0 2rem;
+  gap: 1.3rem;
+  padding: 2rem;
   align-items: center;
+  z-index: 1;
   input {
     padding: 0.6rem;
-    background-color: #c1606055;
+    background-color: #ffffffd9;
     &:focus {
       outline: none;
     }
