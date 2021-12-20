@@ -9,7 +9,7 @@ const GetAllUsers = () => {
     },[users])
 
     return (
-        <li style={{color:"white",fontSize:"20px",letterSpacing:"2px"}}>{`Created Users : ${usersReg.length}`}</li>
+        <li>{`Created Users : ${usersReg.length}`}</li>
     )
 }
 

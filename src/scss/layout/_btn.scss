@@ -22,13 +22,15 @@
   }
   @media (max-width: 800px) {
     display: flex;
-    padding: 2px 0 2px 0;
-    gap: 0.5rem;
+    padding: 3px 0 0 0;
     font-size: 13px;
     height: 30px;
     width: 80px; 
     text-size-adjust:auto;
-
+    &:hover {
+      filter: brightness(1);
+      color: #fff;
+    }
   }
 }
 

@@ -17,7 +17,7 @@ const Ul = styled.ul`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   top: 0;
   right: 0;
-  height: 260px;
+  height: auto;
   width: 230px;
   padding-top: 3.5rem;
   transition: transform 0.4s ease-in-out;
@@ -41,7 +41,7 @@ const RightNavbar = ({ open }) => {
             {
                 isLogged ?
                     (   <>
-                        <h3 style={{color:"white"}} >{`Hola ${data.username || "ASD"}!!`}</h3>
+                        <h3>{`Hola ${data.username || "ASD"}!!`}</h3>
                         <Link className="primary-btn" to="/" onClick={()=> deleteSession()}>Log out</Link>
                         <Link className="primary-btn" to="/editUser">Edit Account</Link>
                         </>
