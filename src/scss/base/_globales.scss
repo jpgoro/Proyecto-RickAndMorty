@@ -24,7 +24,10 @@ a {
 li {
   list-style: none;
   font-family: "RoadRage-Regular";
+  color: rgb(228, 216, 195);
+  font-size: 22px;
 }
+
 
 h2 {
   text-align: center;
@@ -33,6 +36,15 @@ h2 {
   font-size: 2rem;
   color: #95ff00df;
 }
+
+h3 {
+  text-align: center;
+  font-family: "RoadRage-Regular";
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+
 button:focus,
 a:focus {
   outline: none;
@@ -43,15 +55,6 @@ a:focus {
   height: 100vh;
 }
 
-.home-img-back {
-  height: 100vh;
-  width: 100%;
-  background: url("../../components/Home/video/2021-12-16_00h55_07.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
 input {
   text-align: center;
   height: 50px;
@@ -69,4 +72,9 @@ input {
   width: 100%;
   object-fit: cover;
   height: 100%;
+  
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
+

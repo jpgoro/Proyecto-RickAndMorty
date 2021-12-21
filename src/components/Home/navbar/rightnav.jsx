@@ -17,11 +17,12 @@ const Ul = styled.ul`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   top: 0;
   right: 0;
-  height: 260px;
-  width: 230px;
+  height: auto;
+  width: 180px;
   padding-top: 3.5rem;
   transition: transform 0.4s ease-in-out;
   border-radius: 6px;
+  align-items: center;
 `;
 
 const RightNavbar = ({ open }) => {
@@ -41,7 +42,7 @@ const RightNavbar = ({ open }) => {
             {
                 isLogged ?
                     (   <>
-                        <h3 style={{color:"white"}} >{`Hola ${data.username || "ASD"}!!`}</h3>
+                        <h3>{`Hola ${data.username || "ASD"}!!`}</h3>
                         <Link className="primary-btn" to="/" onClick={()=> deleteSession()}>Log out</Link>
                         <Link className="primary-btn" to="/editUser">Edit Account</Link>
                         </>

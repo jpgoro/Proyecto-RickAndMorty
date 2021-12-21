@@ -27,12 +27,13 @@ const UserProvider = ({ children }) => {
         console.log(res.data)
         setUserInfo(res.data.user);
         setIsLogged(true);
+        console.log(isLogged,"gola")
       })
       .catch((err) => {
-          console.log("hola")
         if (localStorage.getItem("UserToken")){ 
           localStorage.removeItem("UserToken");
         setIsLogged(false);
+        console.log("hola")
         setUserInfo({username:"",email:""}); 
     }
       });

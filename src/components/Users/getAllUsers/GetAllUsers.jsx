@@ -1,5 +1,6 @@
 import React,{useEffect,useState,useContext} from 'react'
 import UserContext from '../../../contexts/userContext/UserContext'
+import '../../../scss/app.scss'
 
 const GetAllUsers = () => {
     const {users} = useContext(UserContext)
@@ -9,7 +10,7 @@ const GetAllUsers = () => {
     },[users])
 
     return (
-        <li style={{color:"white",fontSize:"20px",letterSpacing:"2px"}}>{`Created Users : ${usersReg.length}`}</li>
+        <li>{`Created Users : ${usersReg.length}`}</li>
     )
 }
 
