@@ -17,11 +17,11 @@ const upload = multer({storage:storage})
 
 locationRouter.get("/all",getAllLocations)
 
-locationRouter.post("/",upload.single("locationimg"),createLocation)
+locationRouter.post("/",createLocation)
 
 locationRouter.get("/one",getLocation)
 
-locationRouter.put("/",upload.single("locationimg"),updateLocation)
+locationRouter.put("/",updateLocation)
 
 locationRouter.delete("/",deleteLocation)
 
