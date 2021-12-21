@@ -9,8 +9,7 @@ const CharacterSchema = new Schema({
         minlength:1
     },
     gender:String,
-    status:String,
-
+    status:String
 },{versionKey:false})
 
 const Character = model("Character",CharacterSchema)
