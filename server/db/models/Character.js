@@ -8,6 +8,7 @@ const CharacterSchema = new Schema({
         unique:true,
         minlength:1
     },
+    species:String,
     gender:String,
     status:String
 },{versionKey:false})

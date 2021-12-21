@@ -3,16 +3,18 @@ import axios from "axios";
 
 const LocationContext = createContext();
 
+const locationUrl = "http://localhost:5002/locations/all"
+
 const LocationProvider = ({ children }) => {
-    const url = "https://rickandmortyapi.com/api/location";
     const [locations, setLocations] = useState([]);
     const [locationId, setLocationId] = useState(null);
     const [locationData, setLocationData] = useState({});
     //Pongo estado de filtro
     useEffect(() => {
-        axios.get(url)
+        axios.get(locationUrl)
             .then(res => {
-                setLocations([...locations, ...res.data.results])
+                console.log(res.data)
+                setLocations([...locations, ...res.data.data])
             })
             .catch(err => console.error(err))
     }, [])

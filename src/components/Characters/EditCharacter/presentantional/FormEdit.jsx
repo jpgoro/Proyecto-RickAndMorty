@@ -4,6 +4,9 @@ import { Formik, Form, Field } from "formik";
 import { useState, useContext } from "react";
 import CustomField from "./presentational/CustomField";
 import swal from "sweetalert";
+import axios from "axios"
+
+const editCharacterUrl = "http://localhost:5002/characters"
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -55,18 +58,21 @@ export default function Reel() {
     name: charsData.name,
     gender: charsData.gender,
     species: charsData.species,
-    status: charsData.status,
-    image: charsData.image,
+    status: charsData.status
   };
 
   const fnValidationForm = (v) => {
-    setChars(chars.map((el) => (el.id === charsId ? { ...el, ...v } : el)));
-    setCharsId(null);
-    swal({
-      title: "Changes Saved",
-      icon: "success",
-      timer: "1300",
-    });
+    axios.put(editCharacterUrl,{...v})
+    .then(res=>{
+      setChars(chars.map(el=> el._id === charsId ? {...el,...res.data.data} : el  ))
+      setCharsId(null)
+      swal({
+        title: "Changes Saved",
+        icon: "success",
+        timer: "1300",
+      });
+    })
+    .catch(err=>console.log(err))
   };
 
   const [status, setStatus] = useState(charsData.status);

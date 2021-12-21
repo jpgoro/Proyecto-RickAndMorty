@@ -8,13 +8,14 @@ const GetAll = () => {
   const [seeLogged,setSeeLogged] = useState(isLogged)
   const setModal = (elem) => {
     setCharsData(elem);
-    setCharsId(elem.id);
+    setCharsId(elem._id);
   };
   const [characters, setCharacters] = useState(chars);
 
   useEffect(()=>{
     setSeeLogged(isLogged)
   },[isLogged])
+
   useEffect(() => {
     setCharacters(chars);
   }, [chars]);

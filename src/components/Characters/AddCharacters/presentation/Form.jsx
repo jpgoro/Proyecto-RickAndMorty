@@ -4,6 +4,9 @@ import { useState, useContext } from "react";
 import CharContext from "../../../../contexts/charContext/charContext";
 import CustomField from "./presentational/CustomField";
 import swal from "sweetalert";
+import axios from "axios";
+
+const addCharacterUrl = "http://localhost:5002/characters"
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -66,20 +69,23 @@ export default function Reel() {
     name: "",
     gender: "",
     species: "",
-    status: "",
-    image: "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+    status: ""
   };
   const [status, setStatus] = useState();
   const fnValidationForm = (v, { resetForm }) => {
-    setChars([...chars, { ...v, id: chars.length + 1 }]);
-    resetForm();
-    setStatus("");
-    swal({
-      title: "Changes Saved",
-      icon: "success",
-      timer: "1300",
-    });
-  };
+    axios.post(addCharacterUrl,v)
+    .then(res=>{
+      setChars([...chars,{...res.data.data}])
+      setStatus("")
+      resetForm()
+      swal({
+        title: "Changes Saved",
+        icon: "success",
+        timer: "1300",
+      })
+    })
+    .catch(err=>console.log(err))
+  }; 
   const handleRegis = () => {
     swal({
       title: "Please Login to add a character",
