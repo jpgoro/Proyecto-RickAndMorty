@@ -80,6 +80,13 @@ export default function Reel() {
       timer: "1300",
     });
   };
+  const handleRegis = () => {
+    swal({
+      title: "Please Login to add a character",
+      icon: "error",
+      timer:"1500"
+    })
+  }
   return (
     <Formik
       initialValues={initialValue}
@@ -114,7 +121,7 @@ export default function Reel() {
               component={CustomField}
             />
             {errorHandle(errors).status()}
-            <button className="submit-btn" type="submit">
+            <button className="submit-btn" type="submit" onClick={handleRegis}>
               Add Character
             </button>
           </Form>
