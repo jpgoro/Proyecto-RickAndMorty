@@ -14,7 +14,7 @@ const LocationSchema = new Schema({
   dimention: {
     type: String,
     minlength: 1
-  },
+  } 
 },{versionKey:false});
 
 const Location = model("Location", LocationSchema);
