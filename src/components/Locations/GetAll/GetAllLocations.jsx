@@ -3,15 +3,17 @@ import LocationProvider from "../../../contexts/locationContext/locationContext"
 import EditLocations from "../EditLocations/EditLocations";
 import UserContext from "../../../contexts/userContext/UserContext";
 
+
+
+
 const GetAllLocations = () => {
   const { locations, setLocationId, setLocationData } = useContext(LocationProvider)
   const {isLogged} = useContext(UserContext)
   const [seeLogged,setSeeLogged] = useState(isLogged)
   const [location, setLocation] = useState(locations);
   const setModal = (elem) => {
-    console.log(isLogged,seeLogged)
     setLocationData(elem);
-    setLocationId(elem.id);
+    setLocationId(elem._id);
   };
   
   useEffect(()=>{

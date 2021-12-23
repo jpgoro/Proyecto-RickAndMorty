@@ -3,6 +3,10 @@ import { Formik, Form, Field } from "formik";
 import { useContext, useState } from "react";
 import LocationContext from "../../../../contexts/locationContext/locationContext";
 import swal from "sweetalert";
+import axios from "axios";
+
+const urlLocationAdd = "https://serverprueba2.herokuapp.com/locations"
+
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -48,16 +52,19 @@ const Schema = Yup.object().shape({
 
 export default function Reel() {
   let initialValue = { name: "", type: "", dimension: "" };
-
   const { locations, setLocations } = useContext(LocationContext);
   const fnValidationForm = (v, { resetForm }) => {
-    setLocations([...locations, { ...v, id: locations.length + 1 }]);
+    axios.post(urlLocationAdd,{...v})
+    .then(res=>{
+      setLocations([...locations, {...res}]);
     resetForm();
     swal({
       title: "Changes Saved",
       icon: "success",
       timer: "1300",
     });
+    })
+    .catch(err=>console.log(err))
   };
 
   return (

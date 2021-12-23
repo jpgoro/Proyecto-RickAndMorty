@@ -3,7 +3,10 @@ import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 import { useContext} from 'react'
 import swal from 'sweetalert';
-import UserContext from '../../../../contexts/userContext/UserContext' 
+import axios from "axios";
+
+
+const urlEditLocation = "https://serverprueba2.herokuapp.com/locations"
 
 const TAGS_VALIDATION_FORM = {
   NAME: {
@@ -52,16 +55,22 @@ export default function FormEdit() {
     dimension: locationData.dimension,
   };
 
-  const fnValidationForm = (v) => {
-    setLocations(
-      locations.map((el) => (el.id === locationId ? { ...el, ...v } : el))
-    );
-    setLocationId(null);
-    swal({
-      title: "Changes Saved",
-      icon: "success",
-      timer: "1300",
-    });
+  const fnValidationForm = (v,{resetForm}) => {
+    
+    axios.put(urlEditLocation,{...v})
+    .then(res=>{
+      setLocations(
+        locations.map((el) => (el._id === locationId ? { ...el, ...res.data.data } : el))
+      );
+      setLocationId(null);
+      swal({
+        title: "Changes Saved",
+        icon: "success",
+        timer: "1300",
+      });
+    })
+    .catch(err=>console.log(err))
+    
   };
 
   return (

@@ -6,7 +6,7 @@ import CustomField from "./presentational/CustomField";
 import swal from "sweetalert";
 import axios from "axios";
 
-const addCharacterUrl = "http://localhost:5002/characters"
+const addCharacterUrl = "https://serverprueba2.herokuapp.com/characters"
 
 const TAGS_VALIDATION_FORM = {
   NAME: {

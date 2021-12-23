@@ -3,7 +3,9 @@ import axios from "axios";
 
 const CharContext = createContext();
 
-const url = "https://rickandmortyapi.com/api/character";
+const urlGetApi = "https://rickandmortyapi.com/api/character";
+
+const urlGetDB = "https://serverprueba2.herokuapp.com/characters/all"
 
 const CharProvider = ({ children }) => {
     const [chars, setChars] = useState([]);
@@ -11,12 +13,16 @@ const CharProvider = ({ children }) => {
     const [charsData, setCharsData] = useState({})
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(urlGetApi)
             .then(res => {
                 setChars([...chars,...res.data.results])
             })
             .catch(err => console.log(err))
-            
+        axios.get(urlGetDB)
+        .then(res => {
+            setChars([...chars,...res.data.data])
+        })
+        .catch(err => console.log(err))    
 
     }, [])
 

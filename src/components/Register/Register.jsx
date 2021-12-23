@@ -44,9 +44,8 @@ const Schema = Yup.object().shape({
 
 const registerUser = (body, nav) => {
   axios
-    .post("http://localhost:5002/users/register", body)
+    .post("https://serverprueba2.herokuapp.com/users/register", body)
     .then((res) => {
-      console.log(res);
       nav("/login");
     })
     .catch((err) => console.log(err));

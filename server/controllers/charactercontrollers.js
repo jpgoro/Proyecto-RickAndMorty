@@ -5,9 +5,9 @@ const Character = require("../db/models/Character")
 exports.getAllCharacters = async (req,res,next)=>{
     try {
         let characters = await Character.find({})
-        res.status(200).json({error:false,data:characters})
+        return res.status(200).json({error:false,data:characters})
     } catch (error) {
-        res.status(400).json({error:true, message: error.message})
+        return res.status(400).json({error:true, message: error.message})
     }
 }
 

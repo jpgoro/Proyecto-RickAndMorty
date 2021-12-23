@@ -10,7 +10,7 @@ const UserProvider = ({ children }) => {
   const location = useLocation();
   useEffect(() => {
     axios
-      .get("http://localhost:5002/users/all")
+      .get("https://serverprueba2.herokuapp.com/users/all")
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -18,22 +18,19 @@ const UserProvider = ({ children }) => {
     let token = localStorage.getItem("UserToken") || "";
     axios({
       method: "POST",
-      url: "http://localhost:5002/private",
+      url: "https://serverprueba2.herokuapp.com/private",
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => {
-        console.log(res.data)
         setUserInfo(res.data.user);
         setIsLogged(true);
-        console.log(isLogged,"gola")
       })
       .catch((err) => {
         if (localStorage.getItem("UserToken")){ 
           localStorage.removeItem("UserToken");
         setIsLogged(false);
-        console.log("hola")
         setUserInfo({username:"",email:""}); 
     }
       });

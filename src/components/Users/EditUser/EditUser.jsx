@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import UserContext from "../../../contexts/userContext/UserContext";
 
-
+const urlEditUser = "https://serverprueba2.herokuapp.com/users"
 
 
 function errorHandle(errors) {
@@ -25,7 +25,7 @@ const Schema = Yup.object().shape({
 });
 
 const editUser = (user,nav,setUserInfo)=>{
-  axios.put("http://localhost:5002/users",user)
+  axios.put(urlEditUser,user)
     .then(res=>{
         setUserInfo(res.data.user)
         localStorage.setItem("UserToken",res.data.token)

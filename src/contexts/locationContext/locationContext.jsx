@@ -3,7 +3,11 @@ import axios from "axios";
 
 const LocationContext = createContext();
 
-const locationUrl = "http://localhost:5002/locations/all"
+const urlLocation = "https://serverprueba2.herokuapp.com/characters/all"
+
+const urlLocationApi = "https://rickandmortyapi.com/api/location"
+
+
 
 const LocationProvider = ({ children }) => {
     const [locations, setLocations] = useState([]);
@@ -11,9 +15,13 @@ const LocationProvider = ({ children }) => {
     const [locationData, setLocationData] = useState({});
     //Pongo estado de filtro
     useEffect(() => {
-        axios.get(locationUrl)
+        axios.get(urlLocationApi)
             .then(res => {
-                console.log(res.data)
+                setLocations([...locations, ...res.data.results])
+            })
+            .catch(err => console.error(err))
+        axios.get(urlLocation)
+            .then(res => {
                 setLocations([...locations, ...res.data.data])
             })
             .catch(err => console.error(err))
